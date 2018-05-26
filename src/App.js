@@ -8,11 +8,11 @@ import './App.css';
 
 const particlesOptions = {
   particles: {
-    line_linked: {
-      shadow: {
-        enable: true, 
-        color: "#3ca9d1",
-        blur: 5
+    number: {
+      value: 30,
+      density: {
+        enable: true,
+        value_area: 800
       }
     }
   }
