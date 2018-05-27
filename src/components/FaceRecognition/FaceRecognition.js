@@ -2,9 +2,9 @@ import React from 'react';
 
 const FaceRecognition = () => {
   return (
-    <nav style={{display: 'flex', justifyContent: 'flex-end'}}>
-      <p className='f3 link dim black underline pa3 pointer'>Sign Out</p>
-    </nav>
+    <div className='center'>
+      <img src={ "https://samples.clarifai.com/face-det.jpg" } alt={ "Black and white setting of some guys hanging out in a van amidst nature with all the doors open" }/>
+    </div>
   )
 }
 
