@@ -27,7 +27,7 @@ const particlesOptions = {
 class App extends Component {
   constructor() {
     super();
-    this.state= {
+    this.state = {
       input: '',
       imageUrl: ''
     }
@@ -41,7 +41,8 @@ class App extends Component {
     this.setState({imageUrl: this.state.input});
     app.models
       .predict(
-        Clarifai.COLOR_MODEL, "https://samples.clarifai.com/metro-north.jpg")
+        Clarifai.FACE_DETECT_MODEL, 
+        this.state.input)
       .then(
       function(response) {
         console.log(response);
