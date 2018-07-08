@@ -9,7 +9,7 @@ import Rank from './components/Rank/Rank';
 import './App.css';
 
 const app = new Clarifai.App({
-  apiKey: 'YOUR_API_KEY'
+  apiKey: 'de99c3789e5b40439fb7bc3c59213f8b'
  });
 
 const particlesOptions = {
@@ -47,10 +47,10 @@ class App extends Component {
     }
   }
 
-displayFaceBox = (box) => {
-  console.log(box);
-  this.setState({box: box});
-}
+  displayFaceBox = (box) => {
+    console.log(box);
+    this.setState({box: box});
+  }
 
   onInputChange = (event) => {
     this.setState({input: event.target.value});
