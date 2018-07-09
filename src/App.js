@@ -10,7 +10,7 @@ import Rank from './components/Rank/Rank';
 import './App.css';
 
 const app = new Clarifai.App({
-  apiKey: 'YOUR_API_KEY'
+  apiKey: 'de99c3789e5b40439fb7bc3c59213f8b'
  });
 
 const particlesOptions = {
@@ -68,6 +68,10 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  onRouteChange = () => {
+    this.setState({route: 'home'});
+  }
+
   render() {
     return (
       <div className="App">
@@ -76,7 +80,7 @@ class App extends Component {
         />
         <Navigation />
         { this.state.route === 'signIn'
-          ? <SignIn />
+          ? <SignIn onRouteChange={this.onRouteChange} />
           : <div>
               <Logo />
               <Rank />
