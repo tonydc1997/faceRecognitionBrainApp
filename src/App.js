@@ -33,7 +33,8 @@ class App extends Component {
       input: '',
       imageUrl: '', 
       box: {},
-      route: 'signIn'
+      route: 'signIn',
+      isSignedIn: 'false'
     }
   }
 
@@ -70,6 +71,11 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
+    if (route === 'signOut') {
+      this.setState({isSignedIn: false })
+    } else if (route === 'home') {
+      this.setState({isSignedIn: true})
+    }
     this.setState({route: route});
   }
 
