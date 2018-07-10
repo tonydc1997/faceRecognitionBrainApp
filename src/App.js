@@ -80,7 +80,7 @@ class App extends Component {
         params={particlesOptions}
         />
         <Navigation onRouteChange={this.onRouteChange} />
-        { this.state.route === 'signIn'
+        { this.state.route === 'home'
           ? <div>
               <Logo />
               <Rank />
