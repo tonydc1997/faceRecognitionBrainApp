@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { userInfo } from 'os';
 
 class SignIn extends React.Component {
   constructor() {
@@ -25,7 +26,7 @@ class SignIn extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        if (data === 'Success') {
+        if (user.id) {
           this.props.onRouteChange('home');
         }
       })
