@@ -29,8 +29,8 @@ class Register extends React.Component {
       })
     })
       .then(response => response.json())
-      .then(data => {
-        if (data === 'Success') {
+      .then(user => {
+        if (user === 'Success') {
           this.props.onRouteChange('home');
         }
       })
