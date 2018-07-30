@@ -1,10 +1,19 @@
-# SmartBrain 
+# SmartBrain
 
-Final project for [Udemy](https://www.udemy.com/the-complete-web-developer-in-2018/) course
+Final project for Andrei's [Zero to Mastery course](https://www.udemy.com/the-complete-web-developer-in-2018/) on Udemy featuring: 
 
-1. Clone this repo
-2. Run `npm install`
-3. Run `npm start`
-4. You must add your own API key in the `src/App.js` file to connect to Clarifai.
+#### Front-End:
+* HTML5
+* CSS3
+* Javascript (ES6)
+* React 
 
-You can grab your Clarifai API key [here](https://www.clarifai.com/). It's free!
+#### Back-End: 
+* Node
+* Express 
+* PostgreSQL
+
+#### API
+* Clarifai's Face Detection
+
+If you have any questions, issues, or recommendations feel free to reach out to me here on [GitHub](https://github.com/tonydc1997) or at tonydc1997@gmail.com.
