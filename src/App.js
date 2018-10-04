@@ -52,7 +52,7 @@ class App extends Component {
     }})
   }
 
-  calculateFaceLocations = (data) => {
+  calculateFaceLocationss = (data) => {
     return data.outputs[0].data.regions.map(face => {
       const clarifaiFace = face.region_info.bounding_box;
       const image = document.getElementById('inputImage');
@@ -101,7 +101,7 @@ class App extends Component {
         })
         .catch(console.log)
     }
-      this.displayFaceBox(this.calculateFaceLocation(response))
+      this.displayFaceBox(this.calculateFaceLocations(response))
     })
     .catch(err => console.log(err));
   }
