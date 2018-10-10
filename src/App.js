@@ -76,9 +76,11 @@ class App extends Component {
     this.setState({input: event.target.value});
   }
 
+  // https://powerful-depths-38914.herokuapp.com/imageUrl
+  // https://powerful-depths-38914.herokuapp.com/image
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://powerful-depths-38914.herokuapp.com/imageUrl', {
+    fetch('http://localhost:3000/imageUrl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -88,7 +90,7 @@ class App extends Component {
     .then(response => response.json())
     .then(response => {
       if (response) {
-        fetch('https://powerful-depths-38914.herokuapp.com/image', {
+        fetch('http://localhost:3000/image', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({

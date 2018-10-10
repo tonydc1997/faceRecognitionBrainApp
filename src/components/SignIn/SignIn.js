@@ -15,8 +15,9 @@ class SignIn extends React.Component {
   onPasswordChange = (event) => {
     this.setState({signInPassword: event.target.value});
   }
+  // https://powerful-depths-38914.herokuapp.com/signIn
   onSubmitSignIn = () => {
-    fetch('https://powerful-depths-38914.herokuapp.com/signIn', {
+    fetch('http://localhost:3000/signIn', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
