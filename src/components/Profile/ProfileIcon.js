@@ -17,6 +17,16 @@ class ProfileIcon extends React.Component {
 
   render() {
     return (
+      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+        <DropdownToggle caret>
+          Dropdown
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem>View Profile</DropdownItem>
+          <DropdownItem>Sign Out</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+
       <div class="pa4 tc">
         <img
             src="http://tachyons.io/img/logo.jpg"
