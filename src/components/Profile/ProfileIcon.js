@@ -26,7 +26,6 @@ class ProfileIcon extends React.Component {
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <DropdownToggle
             tag="span"
-            onClick={this.toggle}
             data-toggle="dropdown"
             aria-expanded={this.state.dropdownOpen}
           >
@@ -36,6 +35,7 @@ class ProfileIcon extends React.Component {
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem>View Profile</DropdownItem>
+            <DropdownItem divider />
             <DropdownItem>Sign Out</DropdownItem>
           </DropdownMenu>
         </Dropdown>
