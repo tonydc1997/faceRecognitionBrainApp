@@ -7,19 +7,19 @@ const modalRoot = document.getElementById('modal-root');
 class Modal extends React.Component {
   constructor(props) {
     super(props);
-    this.element = document.createElement('div');
+    this.el = document.createElement('div');
   }
 
   componentDidMount() {
-    modalRoot.appendChild(this.element);
+    modalRoot.appendChild(this.el);
   }
 
   componentWillUnmount() {
-    modalRoot.removeChild(this.element);
+    modalRoot.removeChild(this.el);
   }
 
   render() {
-    return ReactDOM.createPortal(this.state.props, this.element)
+    return ReactDOM.createPortal(this.props.children, this.el)
   }
 }
 
