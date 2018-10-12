@@ -13,7 +13,7 @@ const Profile = ({ isProfileOpen, toggleModal }) => {
           <h4>Images Submitted: NUMBER</h4>
           <p>Member since: TIMESTAMP</p>
           <hr/>
-          <label className="db fw6 lh-copy f6 tl" htmlFor="name">Name</label>
+          <label className="mt2 fw6" htmlFor="user-name">Name</label>
           <input 
             className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
             type="text" 
