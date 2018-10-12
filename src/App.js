@@ -119,6 +119,13 @@ class App extends Component {
     this.setState({route: route});
   }
 
+  toggleModal = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      isProfileOpen: !prevState.isProfileOpen
+    }))
+  }
+
   render() {
     const { isSignedIn, imageUrl, route, boxes, isProfileOpen} = this.state;
     return (
