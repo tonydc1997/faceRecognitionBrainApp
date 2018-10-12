@@ -4,8 +4,15 @@ import './Profile.css';
 const Profile = ({ isProfileOpen, toggleModal }) => {
   return (
     <div className="profile-modal">
-      <article className="br3 ba bw1 b--black-60 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
-        <main className="pa4 black-80">
+      <article className="br3 ba bw1 b--black-60 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center bg-white">
+        <main className="pa4 black-80 w-80">
+        <img
+          src="http://tachyons.io/img/logo.jpg"
+          className="h3 w3 dib" alt="avatar" />
+          <h1>Shovel Knight</h1>
+          <h4>Images Submitted: NUMBER</h4>
+          <p>Member since: TIMESTAMP</p>
+          <hr/>
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
               <legend className="f1 fw6 ph0 mh0">Register</legend>
