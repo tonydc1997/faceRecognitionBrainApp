@@ -34,6 +34,7 @@ class ProfileIcon extends React.Component {
             className="br-100 ba h3 w3 dib" alt="avatar" />
           </DropdownToggle>
           <DropdownMenu
+            right
             className="b--transparent shadow-5" 
             style={{marginTop: '20px', backgroundColor: 'rgba(255, 255, 255, 0.5)'}}
           >
