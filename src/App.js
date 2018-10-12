@@ -129,7 +129,7 @@ class App extends Component {
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         { isProfileOpen && 
             <Modal>
-              {'¡Hola!'}
+              <Profile isProfileOpen={isProfileOpen} />
             </Modal>
         }
         { route === 'home'
