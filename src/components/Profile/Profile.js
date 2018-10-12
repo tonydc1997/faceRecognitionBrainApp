@@ -13,11 +13,11 @@ const Profile = ({ isProfileOpen, toggleModal }) => {
           <h4>Images Submitted: NUMBER</h4>
           <p>Member since: TIMESTAMP</p>
           <hr/>
-          <label className="mt2 fw6" htmlFor="user-name">Name</label>
+          <label className="mt2 fw6" htmlFor="user-name">Name:</label>
           <input 
-            className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
+            className="pa2 ba w-100" 
             type="text" 
-            name="name"  
+            name="user-name"  
             id="name" 
             onChange={this.onNameChange}
           />
