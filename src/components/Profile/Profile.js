@@ -17,9 +17,9 @@ const Profile = ({ isProfileOpen, toggleModal }) => {
           <input 
             className="pa2 ba w-100" 
             type="text" 
+            placeholder="Shovel Knight"
             name="user-name"  
             id="name" 
-            onChange={this.onNameChange}
           />
           <input 
             className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
