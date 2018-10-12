@@ -43,6 +43,7 @@ const Profile = ({ isProfileOpen, toggleModal }) => {
             onClick={toggleModal}>Cancel</button>
           </div>
         </main>
+        <div className="modal-close" onClick={toggleModal}>&times;</div>
       </article>
     </div>
   );
