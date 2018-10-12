@@ -38,8 +38,8 @@ const Profile = ({ isProfileOpen, toggleModal }) => {
             id="book" 
           />
           <div className="mt2" style={{ display: 'flex', justifyContent: 'space-evenly'}}>
-            <button className="ba pa2 grow pointer hover-white w-40 bg-light-blue b--black-20">Save</button>
-            <button className="ba pa2 grow pointer hover-white w-40 bg-light-blue b--black-20">Cancel</button>
+            <button className="ba pa2 grow pointer w-40 bg-blue b--dark-blue br1 white">Save</button>
+            <button className="ba pa2 grow pointer w-40 bg-white b--dark-red br1 red">Cancel</button>
           </div>
         </main>
       </article>
