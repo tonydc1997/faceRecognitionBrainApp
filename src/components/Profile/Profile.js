@@ -21,20 +21,23 @@ const Profile = ({ isProfileOpen, toggleModal }) => {
             name="user-name"  
             id="name" 
           />
+          <label className="mt2 fw6" htmlFor="user-age">Age:</label>
           <input 
-            className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
-            type="email" 
-            name="email-address"  
-            id="email-address" 
-            onChange={this.onEmailChange}
+            className="pa2 ba w-100" 
+            type="text" 
+            placeholder="90"
+            name="user-age"  
+            id="age" 
           />
+          <label className="mt2 fw6" htmlFor="user-book">Favorite Book:</label>
           <input 
-            className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
-            type="password" 
-            name="password"  
-            id="password" 
-            onChange={this.onPasswordChange}
+            className="pa2 ba w-100" 
+            type="text" 
+            placeholder="Deep Work"
+            name="user-book"  
+            id="book" 
           />
+
         </main>
       </article>
     </div>
