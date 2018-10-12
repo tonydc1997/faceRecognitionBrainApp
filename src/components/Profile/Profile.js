@@ -13,30 +13,28 @@ const Profile = ({ isProfileOpen, toggleModal }) => {
           <h4>Images Submitted: NUMBER</h4>
           <p>Member since: TIMESTAMP</p>
           <hr/>
-          <div className="measure">
-            <label className="db fw6 lh-copy f6 tl" htmlFor="name">Name</label>
-            <input 
-              className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
-              type="text" 
-              name="name"  
-              id="name" 
-              onChange={this.onNameChange}
-            />
-            <input 
-              className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
-              type="email" 
-              name="email-address"  
-              id="email-address" 
-              onChange={this.onEmailChange}
-            />
-            <input 
-              className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
-              type="password" 
-              name="password"  
-              id="password" 
-              onChange={this.onPasswordChange}
-            />
-          </div>
+          <label className="db fw6 lh-copy f6 tl" htmlFor="name">Name</label>
+          <input 
+            className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
+            type="text" 
+            name="name"  
+            id="name" 
+            onChange={this.onNameChange}
+          />
+          <input 
+            className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
+            type="email" 
+            name="email-address"  
+            id="email-address" 
+            onChange={this.onEmailChange}
+          />
+          <input 
+            className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black" 
+            type="password" 
+            name="password"  
+            id="password" 
+            onChange={this.onPasswordChange}
+          />
         </main>
       </article>
     </div>
