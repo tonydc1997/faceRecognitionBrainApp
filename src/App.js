@@ -133,7 +133,8 @@ class App extends Component {
         <Particles className='particles'
         params={particlesOptions}
         />
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} 
+        toggleModal={this.toggleModal} />
         { isProfileOpen && 
             <Modal>
               <Profile isProfileOpen={isProfileOpen} toggleModal={this.toggleModal} />
