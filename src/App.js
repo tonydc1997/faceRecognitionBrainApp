@@ -127,12 +127,14 @@ class App extends Component {
         params={particlesOptions}
         />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+        { isProfileOpen && 
+            <Modal>
+              {'¡Hola!'}
+            </Modal>
+        }
         { route === 'home'
           ? <div>
               <Logo />
-              <Modal>
-                {'¡Hola!'}
-              </Modal>
               <Rank 
                 name={this.state.user.name}
                 entries={this.state.user.entries}
