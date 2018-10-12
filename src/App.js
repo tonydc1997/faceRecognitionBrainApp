@@ -136,7 +136,7 @@ class App extends Component {
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         { isProfileOpen && 
             <Modal>
-              <Profile isProfileOpen={isProfileOpen} />
+              <Profile isProfileOpen={isProfileOpen} toggleModal={this.toggleModal} />
             </Modal>
         }
         { route === 'home'
