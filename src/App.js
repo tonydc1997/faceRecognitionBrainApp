@@ -28,6 +28,7 @@ const initialState = {
   boxes: [],
   route: 'signIn',
   isSignedIn: false, 
+  isProfileOpen: false,
   user: {
     id: '',
     name: '',
@@ -119,7 +120,7 @@ class App extends Component {
   }
 
   render() {
-    const { isSignedIn, imageUrl, route, boxes} = this.state;
+    const { isSignedIn, imageUrl, route, boxes, isProfileOpen} = this.state;
     return (
       <div className="App">
         <Particles className='particles'
@@ -129,6 +130,9 @@ class App extends Component {
         { route === 'home'
           ? <div>
               <Logo />
+              <Modal>
+                {'¡Hola!'}
+              </Modal>
               <Rank 
                 name={this.state.user.name}
                 entries={this.state.user.entries}
