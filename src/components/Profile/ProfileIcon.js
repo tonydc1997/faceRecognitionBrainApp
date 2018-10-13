@@ -22,13 +22,8 @@ class ProfileIcon extends React.Component {
 
   render() {
     return (
-      <div className="pa4 tc">
+      <div className="pa4 tc bg-red">
         <div isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <div
-            tag="span"
-            data-toggle="dropdown"
-            aria-expanded={this.state.dropdownOpen}
-          >
           <img
             src="http://tachyons.io/img/logo.jpg"
             className="br-100 ba h3 w3 dib" alt="avatar" />
@@ -38,12 +33,11 @@ class ProfileIcon extends React.Component {
             className="b--transparent shadow-5" 
             style={{marginTop: '20px', backgroundColor: 'rgba(255, 255, 255, 0.5)'}}
           >
-            <div onClick={this.props.toggleModal}>View Profile</div>
-            <div divider />
-            <div onClick={() => this.props.onRouteChange('signOut')}>Sign Out</div>
+            <button onClick={this.props.toggleModal}
+            className="bb b--black-70">View Profile</button>
+            <button onClick={() => this.props.onRouteChange('signOut')}>Sign Out</button>
           </div>
         </div>
-      </div>
     );
   }
 }
