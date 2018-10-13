@@ -13,8 +13,10 @@
 
 .dropdown__content {
   display: none;
+  background-color: rgba(255, 255, 255, 0.5);
   position: absolute;
   background-color: #f1f1f1;
+  margin-top: 20px;
   min-width: 160px;
   z-index: 2;
 }
