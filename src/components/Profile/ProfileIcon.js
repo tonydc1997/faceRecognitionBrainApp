@@ -24,12 +24,10 @@ class ProfileIcon extends React.Component {
   render() {
     return (
       <div className="pa4 tc bg-red dropdown">
-        <button isOpen={this.state.dropdownOpen} toggle={this.toggle} >
-          <img
-            src="http://tachyons.io/img/logo.jpg"
-            className="br-100 ba h3 w3 dib dropdown__btn" alt="avatar"
-          />
-        </button>
+        <img
+          src="http://tachyons.io/img/logo.jpg"
+          className="br-100 ba h3 w3 dib dropdown__btn" alt="avatar"
+          isOpen={this.state.dropdownOpen} toggle={this.toggle} />
         <div
           style={{float: 'right'}}
           className="b--transparent shadow-5 dropdown__content"
