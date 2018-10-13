@@ -24,11 +24,11 @@ class ProfileIcon extends React.Component {
   render() {
     return (
       <div className="pa4 tc bg-red">
-        <div isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+        <a isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <img
             src="http://tachyons.io/img/logo.jpg"
             className="br-100 ba h3 w3 dib" alt="avatar" />
-        </div>
+        </a>
         <div
           right
           className="b--transparent shadow-5" 
