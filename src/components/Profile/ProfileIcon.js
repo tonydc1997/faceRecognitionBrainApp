@@ -23,7 +23,7 @@ class ProfileIcon extends React.Component {
 
   render() {
     return (
-      <div className="pa4 tc dropdown">
+      <div className="pa4 tc dib relative dropdown">
         <img
           src="http://tachyons.io/img/logo.jpg"
           className="br-100 ba h3 w3 dib dropdown__btn" alt="avatar"
@@ -31,16 +31,18 @@ class ProfileIcon extends React.Component {
         />
           { this.state.dropdownOpen &&
               <ul
-                style={{marginTop: '-5px', marginRight: '0', backgroundColor: 'rgba(255, 255, 255, 0.5)'}}
-                className="b--transparent shadow-5 list dropdown__content"
+                style={{marginTop: "-5px", right: "2.2rem", backgroundColor: "buttonface"}}
+                className="b--transparent shadow-5 list mb0 pa0 absolute dropdown__content"
               >
-                <li className="db">
+                <li className="db bb b--black-10">
                   <button onClick={this.props.toggleModal}
-                    className="b--black-70 f6 f5-ns b db pa2 link dim mid-gray dropdown__content">View Profile</button>
+                    style={{width: "10rem"}}
+                    className="b--transparent f6 f5-ns b db pa2 w4 link dim dark-gray tl dropdown__content">View Profile</button>
                 </li>
-                <li className="db mr2">
+                <li className="db m0 br--bottom">
                   <button onClick={() => this.props.onRouteChange('signOut')}
-                    className="b--black-70 f6 f5-ns b db pa2 link dim mid-gray dropdown__content">Sign Out</button>
+                    style={{width: "10rem"}}
+                    className="b--transparent f6 f5-ns b db pa2 w4 link dim dark-gray tl dropdown__content">Sign Out</button>
                 </li>
               </ul>
           }
