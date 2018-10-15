@@ -23,26 +23,26 @@ class ProfileIcon extends React.Component {
 
   render() {
     return (
-      <div className="pa4 tc dib relative dropdown">
+      <div className="pa4 tc dib relative">
         <img
           src="http://tachyons.io/img/logo.jpg"
-          className="br-100 ba h3 w3 dib dropdown__btn" alt="avatar"
+          className="br-100 ba h3 w3 dib" alt="avatar"
           isOpen={this.state.dropdownOpen} onClick={this.toggle} 
         />
           { this.state.dropdownOpen &&
               <ul
                 style={{marginTop: "-5px", right: "2.2rem", backgroundColor: "buttonface"}}
-                className="b--transparent br2 shadow-5 list mb0 pa0 absolute dropdown__content"
+                className="b--transparent br2 shadow-5 list mb0 pa0 absolute"
               >
                 <li className="db bb b--black-10">
                   <button onClick={this.props.toggleModal}
                     style={{width: "10rem", borderTopLeftRadius: ".25rem", borderTopRightRadius: ".25rem"}}
-                    className="b--transparent bg-animate hover-bg-moon-gray f6 f5-ns b db pa2 w4 link dark-gray tl dropdown__content">View Profile</button>
+                    className="b--transparent bg-animate hover-bg-moon-gray f6 f5-ns b db pa2 w4 link dark-gray tl">View Profile</button>
                 </li>
                 <li className="db m0">
                   <button onClick={() => this.props.onRouteChange('signOut')}
                     style={{width: "10rem", borderBottomLeftRadius: ".25rem", borderBottomRightRadius: ".25rem"}}
-                    className="b--transparent bg-animate hover-bg-moon-gray f6 f5-ns b db pa2 w4 link dark-gray tl dropdown__content">Sign Out</button>
+                    className="b--transparent bg-animate hover-bg-moon-gray f6 f5-ns b db pa2 w4 link dark-gray tl">Sign Out</button>
                 </li>
               </ul>
           }
