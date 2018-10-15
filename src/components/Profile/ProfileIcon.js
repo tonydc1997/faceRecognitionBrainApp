@@ -1,5 +1,5 @@
 import React from 'react';
-import './Profile.css';
+// import './Profile.css';
 // import { 
 //   Dropdown, 
 //   DropdownToggle, 
@@ -27,16 +27,24 @@ class ProfileIcon extends React.Component {
         <img
           src="http://tachyons.io/img/logo.jpg"
           className="br-100 ba h3 w3 dib dropdown__btn" alt="avatar"
-          isOpen={this.state.dropdownOpen} toggle={this.toggle} />
-        <div
-          style={{float: 'right'}}
-          className="b--transparent shadow-5 dropdown__content"
-        >
-          <button onClick={this.props.toggleModal}
-            className="bb b--black-70 dropdown__content__item">View Profile</button>
-          <button onClick={() => this.props.onRouteChange('signOut')}
-            className="dropdown__content__item">Sign Out</button>
-        </div>
+          isOpen={this.state.dropdownOpen} onClick={this.toggle} />
+          { 
+            this.state.dropdownOpen ? 
+            (
+              <div
+                style={{float: 'right'}}
+                className="b--transparent shadow-5 dropdown__content"
+              >
+                <button onClick={this.props.toggleModal}
+                  className="bb b--black-70 dropdown__content__item">View Profile</button>
+                <button onClick={() => this.props.onRouteChange('signOut')}
+                  className="dropdown__content__item">Sign Out</button>
+              </div>
+            ) 
+            : (
+              null
+            )
+          }
       </div>
     );
   }
