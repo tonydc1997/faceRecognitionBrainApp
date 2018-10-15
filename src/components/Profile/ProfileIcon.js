@@ -37,12 +37,12 @@ class ProfileIcon extends React.Component {
                 <li className="db bb b--black-10">
                   <button onClick={this.props.toggleModal}
                     style={{width: "10rem"}}
-                    className="b--transparent f6 f5-ns b db pa2 w4 link dim dark-gray tl dropdown__content">View Profile</button>
+                    className="b--transparent bg-animate hover-bg-moon-gray f6 f5-ns b db pa2 w4 link dark-gray tl dropdown__content">View Profile</button>
                 </li>
                 <li className="db m0 br--bottom">
                   <button onClick={() => this.props.onRouteChange('signOut')}
                     style={{width: "10rem"}}
-                    className="b--transparent f6 f5-ns b db pa2 w4 link dim dark-gray tl dropdown__content">Sign Out</button>
+                    className="b--transparent bg-animate hover-bg-moon-gray  f6 f5-ns b db pa2 w4 link dark-gray tl dropdown__content">Sign Out</button>
                 </li>
               </ul>
           }
