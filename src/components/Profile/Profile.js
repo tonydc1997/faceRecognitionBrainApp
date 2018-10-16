@@ -27,14 +27,15 @@ class Profile extends React.Component {
     }
   }
 
+  // https://powerful-depths-38914.herokuapp.com/profile/${this.props.user.id}
   onProfileUpdate = (data) => {
-    fetch(`http:localhost:3000/profile/${this.props.user.id}`, {
+    fetch(`http://localhost:3000/profile/${this.props.user.id}`, {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ formInput: data })
     }).then(resp => {
       this.props.toggleModal();
-      this.props.loadUser({ ...this.props.user, ...data});
+      this.props.loadUser({ ...this.props.user, ...data });
     }).catch(console.log);
   }
 
