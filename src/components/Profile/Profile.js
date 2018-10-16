@@ -40,6 +40,7 @@ class Profile extends React.Component {
 
   render() {
     const { user, toggleModal } = this.props;
+    const { name, age, book } = this.state;
     return (
       <div className="profile-modal">
         <article className="br3 ba bw1 b--black-60 mv4 w-100 w-70-m w-35-l mw6 shadow-5 center bg-white">
