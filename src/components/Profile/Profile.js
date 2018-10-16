@@ -69,12 +69,12 @@ class Profile extends React.Component {
                 Save
               </button>
               <button className="ba pa2 grow pointer w-40 bg-white b--dark-red br1 red"
-              onClick={toggleModal}>
+              onClick={this.props.toggleModal}>
                 Cancel
               </button>
             </div>
           </main>
-          <div className="modal-close" onClick={toggleModal}>&times;</div>
+          <div className="modal-close" onClick={this.props.toggleModal}>&times;</div>
         </article>
       </div>
     );
