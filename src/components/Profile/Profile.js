@@ -81,7 +81,7 @@ class Profile extends React.Component {
             />
             <div className="mt2" style={{ display: 'flex', justifyContent: 'space-evenly'}}>
               <button
-                onClick={this.onProfileUpdate({ name, age, book })}
+                onClick={() => this.onProfileUpdate({ name, age, book })}
                 className="ba pa2 grow pointer w-40 bg-blue b--dark-blue br1 white">
                 Save
               </button>
