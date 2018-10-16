@@ -10,6 +10,21 @@ class Profile extends React.Component {
       book: this.props.user.book
     }
   }
+
+  onFormChange = (event) => {
+    switch(event.target.value) {
+      case 'user-name': 
+        this.setState({name: event.target.value})
+        break;
+      case 'user-age':
+        this.setState({age: event.target.value})
+        break;
+      case 'user-book': 
+        this.setState({book: event.target.value})
+        break;
+    }
+  }
+
   render() {
     return (
       <div className="profile-modal">
