@@ -36,9 +36,9 @@ class Profile extends React.Component {
           <img
             src="http://tachyons.io/img/logo.jpg"
             className="h3 w3 dib" alt="avatar" />
-            <h1>Shovel Knight</h1>
-            <h4>Images Submitted: NUMBER</h4>
-            <p>Member since: TIMESTAMP</p>
+            <h1>{user.name}</h1>
+            <h4>{`Images Submitted: ${user.entries}`}</h4>
+            <p>{`Member since: ${new Date(user.joined).toLocaleDateString()}`}</p>
             <hr/>
             <label className="mt2 fw6" htmlFor="user-name">Name:</label>
             <input 
