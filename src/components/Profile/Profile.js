@@ -44,7 +44,7 @@ class Profile extends React.Component {
             <input 
               className="pa2 ba w-100" 
               type="text" 
-              placeholder="Shovel Knight"
+              placeholder={user.name}
               name="user-name"  
               id="name" 
             />
@@ -52,7 +52,7 @@ class Profile extends React.Component {
             <input 
               className="pa2 ba w-100" 
               type="text" 
-              placeholder="90"
+              placeholder={user.age}
               name="user-age"  
               id="age" 
             />
@@ -60,7 +60,7 @@ class Profile extends React.Component {
             <input 
               className="pa2 ba w-100" 
               type="text" 
-              placeholder="Deep Work"
+              placeholder={user.book}
               name="user-book"  
               id="book" 
             />
