@@ -28,7 +28,7 @@ class Profile extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, toggleModal } = this.props;
     return (
       <div className="profile-modal">
         <article className="br3 ba bw1 b--black-60 mv4 w-100 w-70-m w-35-l mw6 shadow-5 center bg-white">
@@ -69,12 +69,12 @@ class Profile extends React.Component {
                 Save
               </button>
               <button className="ba pa2 grow pointer w-40 bg-white b--dark-red br1 red"
-              onClick={this.props.toggleModal}>
+              onClick={toggleModal}>
                 Cancel
               </button>
             </div>
           </main>
-          <div className="modal-close" onClick={this.props.toggleModal}>&times;</div>
+          <div className="modal-close" onClick={toggleModal}>&times;</div>
         </article>
       </div>
     );
