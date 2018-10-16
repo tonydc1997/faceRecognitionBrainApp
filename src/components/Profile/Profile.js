@@ -79,11 +79,14 @@ class Profile extends React.Component {
               id="book" 
             />
             <div className="mt2" style={{ display: 'flex', justifyContent: 'space-evenly'}}>
-              <button className="ba pa2 grow pointer w-40 bg-blue b--dark-blue br1 white">
+              <button
+                onClick={this.onProfileUpdate({ name, age, book })}
+                className="ba pa2 grow pointer w-40 bg-blue b--dark-blue br1 white">
                 Save
               </button>
-              <button className="ba pa2 grow pointer w-40 bg-white b--dark-red br1 red"
-              onClick={toggleModal}>
+              <button
+                className="ba pa2 grow pointer w-40 bg-white b--dark-red br1 red"
+                onClick={toggleModal}>
                 Cancel
               </button>
             </div>
