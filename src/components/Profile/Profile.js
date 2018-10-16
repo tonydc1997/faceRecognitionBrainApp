@@ -27,6 +27,10 @@ class Profile extends React.Component {
     }
   }
 
+  onProfileUpdate = (data) => {
+    fetch(`http:localhost:3000/profile/${this.props.user.id}`)
+  }
+
   render() {
     const { user, toggleModal } = this.props;
     return (
