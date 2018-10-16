@@ -22,6 +22,8 @@ class Profile extends React.Component {
       case 'user-book': 
         this.setState({book: event.target.value})
         break;
+      default: 
+        return;
     }
   }
 
