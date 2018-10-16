@@ -42,6 +42,7 @@ class Profile extends React.Component {
             <hr/>
             <label className="mt2 fw6" htmlFor="user-name">Name:</label>
             <input 
+              onChange={this.onFormChange}
               className="pa2 ba w-100" 
               type="text" 
               placeholder={user.name}
@@ -50,6 +51,7 @@ class Profile extends React.Component {
             />
             <label className="mt2 fw6" htmlFor="user-age">Age:</label>
             <input 
+              onChange={this.onFormChange}
               className="pa2 ba w-100" 
               type="text" 
               placeholder={user.age}
@@ -58,6 +60,7 @@ class Profile extends React.Component {
             />
             <label className="mt2 fw6" htmlFor="user-book">Favorite Book:</label>
             <input 
+              onChange={this.onFormChange}
               className="pa2 ba w-100" 
               type="text" 
               placeholder={user.book}
