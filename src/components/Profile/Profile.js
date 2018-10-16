@@ -35,7 +35,7 @@ class Profile extends React.Component {
     }).then(resp => {
       this.props.toggleModal();
       this.props.loadUser({ ...this.props.user, ...data});
-    })
+    }).catch(console.log);
   }
 
   render() {
