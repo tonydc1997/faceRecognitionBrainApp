@@ -131,14 +131,22 @@ class App extends Component {
     const { isSignedIn, imageUrl, route, boxes, isProfileOpen, user} = this.state;
     return (
       <div className="App">
-        <Particles className='particles'
-        params={particlesOptions}
+        <Particles 
+          className='particles'
+          params={particlesOptions}
         />
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} 
-        toggleModal={this.toggleModal} />
+        <Navigation 
+          isSignedIn={isSignedIn}
+          onRouteChange={this.onRouteChange} 
+          toggleModal={this.toggleModal} 
+        />
         { isProfileOpen && 
             <Modal>
-              <Profile isProfileOpen={isProfileOpen} toggleModal={this.toggleModal} user={user} loadUser={this.loadUser} />
+              <Profile 
+                isProfileOpen={isProfileOpen}
+                toggleModal={this.toggleModal}
+                user={user} 
+              />
             </Modal>
         }
         { route === 'home'
