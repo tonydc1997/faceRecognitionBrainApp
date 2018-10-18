@@ -18,7 +18,9 @@ class SignIn extends React.Component {
     this.setState({signInPassword: event.target.value});
   }
 
-
+  saveAuthTokenInSession = (token) => {
+    window.sessionStorage.setItem('token', token);
+  };
 
   // https://powerful-depths-38914.herokuapp.com/signIn
   onSubmitSignIn = () => {
@@ -69,7 +71,7 @@ class SignIn extends React.Component {
                 />
               </div>
             </fieldset>
-            
+
             <div className="">
               <input 
                 onClick={this.onSubmitSignIn}
