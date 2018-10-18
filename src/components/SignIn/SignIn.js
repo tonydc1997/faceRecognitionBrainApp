@@ -9,12 +9,17 @@ class SignIn extends React.Component {
       signInPassword: ''
     }
   }
+
   onEmailChange = (event) => {
     this.setState({signInEmail: event.target.value});
   }
+
   onPasswordChange = (event) => {
     this.setState({signInPassword: event.target.value});
   }
+
+
+
   // https://powerful-depths-38914.herokuapp.com/signIn
   onSubmitSignIn = () => {
     fetch('http://localhost:3000/signIn', {
@@ -52,6 +57,7 @@ class SignIn extends React.Component {
                   onChange={this.onEmailChange}
                   />
               </div>
+
               <div className="mv3">
                 <label className="db fw6 lh-copy f6 tl" htmlFor="password">Password</label>
                 <input 
@@ -63,6 +69,7 @@ class SignIn extends React.Component {
                 />
               </div>
             </fieldset>
+            
             <div className="">
               <input 
                 onClick={this.onSubmitSignIn}
