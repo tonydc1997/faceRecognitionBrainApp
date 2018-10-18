@@ -7,7 +7,7 @@ class SignIn extends React.Component {
     this.state = {
       signInEmail: '',
       signInPassword: ''
-    }
+    };
   }
 
   onEmailChange = (event) => {
@@ -16,7 +16,7 @@ class SignIn extends React.Component {
 
   onPasswordChange = (event) => {
     this.setState({signInPassword: event.target.value});
-  }
+  };
 
   saveAuthTokenInSession = (token) => {
     window.sessionStorage.setItem('token', token);
@@ -38,8 +38,8 @@ class SignIn extends React.Component {
           this.props.loadUser(data);
           this.props.onRouteChange('home');
         }
-      })
-  }
+      });
+  };
 
   render() {
     const { onRouteChange } = this.props;
