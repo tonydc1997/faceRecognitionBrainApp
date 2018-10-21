@@ -8,22 +8,21 @@ class Profile extends React.Component {
       name: this.props.user.name,
       age: this.props.user.age,
       book: this.props.user.book
-    }
+    };
   }
 
   onFormChange = (event) => {
-    switch(event.target.name) {
-      case 'user-name': 
-        this.setState({name: event.target.value})
+    switch (event.target.name) {
+      case 'user-name':
+        this.setState({ name: event.target.value });
         break;
       case 'user-age':
-        this.setState({age: event.target.value})
+        this.setState({ age: event.target.value });
         break;
-      case 'user-book': 
-        this.setState({book: event.target.value})
+      case 'user-book':
+        this.setState({ book: event.target.value });
         break;
-      default: 
-        return;
+      default:
     }
   }
 
@@ -31,8 +30,8 @@ class Profile extends React.Component {
   onProfileUpdate = (data) => {
     fetch(`http://localhost:3000/profile/${this.props.user.id}`, {
       method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ formInput: data })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ formInput: data }),
     }).then(resp => {
       this.props.toggleModal();
       this.props.loadUser({ ...this.props.user, ...data });
