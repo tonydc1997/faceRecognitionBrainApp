@@ -14,6 +14,11 @@
   },
   "extends": ["airbnb", "plugin:prettier/recommended"],
   "rules": {
+    "quotes": [
+      "warn",
+      "single",
+      "avoid-escape"
+    ],
     "class-methods-use-this": "off",
     "import/no-named-as-default": "off",
     "react/jsx-filename-extension": [
