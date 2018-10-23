@@ -52,8 +52,8 @@ class App extends Component {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': token
-        }
+          'Authorization': token,
+        },
       })
         .then(response => response.json())
         .then(data => {
@@ -135,10 +135,11 @@ class App extends Component {
   onRouteChange = route => {
     if (route === 'signOut') {
       return this.setState(initialState);
-    } if (route === 'home') {
+    }
+    if (route === 'home') {
       this.setState({ isSignedIn: true });
     }
-    this.setState({route});
+    this.setState({ route });
   };
 
   toggleModal = () => {
@@ -178,18 +179,17 @@ class App extends Component {
         {route === 'home' ? (
           <div>
             <Logo />
-            <Rank 
+            <Rank
               name={this.state.user.name}
               entries={this.state.user.entries}
             />
-            <ImageLinkForm 
-                onInputChange={this.onInputChange}
-                onButtonSubmit={this.onButtonSubmit}
-              />
-            <FaceRecognition boxes={boxes} imageUrl={imageUrl} /> 
+            <ImageLinkForm
+              onInputChange={this.onInputChange}
+              onButtonSubmit={this.onButtonSubmit}
+            />
+            <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
           </div>
-        )
-         : route === 'signIn' ? (
+        ) : route === 'signIn' ? (
           <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
         ) : (
           <Register
