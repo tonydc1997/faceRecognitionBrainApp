@@ -34,6 +34,7 @@ class ProfileIcon extends React.Component {
           >
             <li className="db bb b--black-10">
               <button
+                type="button"
                 onClick={this.props.toggleModal}
                 style={{
                   width: '10rem',
@@ -47,6 +48,7 @@ class ProfileIcon extends React.Component {
             </li>
             <li className="db m0">
               <button
+                type="button"
                 onClick={() => this.props.onRouteChange('signOut')}
                 style={{
                   width: '10rem',
