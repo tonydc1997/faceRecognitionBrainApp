@@ -17,12 +17,17 @@ class ProfileIcon extends React.Component {
   render() {
     return (
       <div className="pa4 tc dib relative">
-        <img
-          src="http://tachyons.io/img/logo.jpg"
-          className="br-100 ba h3 w3 dib"
-          alt="avatar"
+        <button
           onClick={this.toggle}
-        />
+          type="button"
+          className="bg-transparent b--transparent"
+        >
+          <img
+            src="http://tachyons.io/img/logo.jpg"
+            className="br-100 ba h3 w3 dib"
+            alt="avatar"
+          />
+        </button>
         {this.state.dropdownOpen && (
           <ul
             style={{
