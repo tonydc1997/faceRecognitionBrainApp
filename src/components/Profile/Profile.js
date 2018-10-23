@@ -7,7 +7,7 @@ class Profile extends React.Component {
     this.state = {
       name: this.props.user.name,
       age: this.props.user.age,
-      book: this.props.user.book
+      book: this.props.user.book,
     };
   }
 
