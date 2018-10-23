@@ -55,7 +55,12 @@ class App extends Component {
           'Authorization': `Bearer ${token}`
         }
       })
-      .then()
+        .then(data => {
+          if (data && data.id) {
+            console.log('Success! We need to get user profile');
+          }
+        })
+        .catch(console.log);
     }
   }
 
