@@ -97,13 +97,15 @@ class Profile extends React.Component {
             >
               <button
                 onClick={() => this.onProfileUpdate({ name, age, book })}
-                className="ba pa2 grow pointer w-40 bg-blue b--dark-blue br1 white"
+                className="ba pa2 grow pointer w-40 bg-blue b--dark-blue br1 white b"
+                type="button"
               >
                 Save
               </button>
               <button
-                className="ba pa2 grow pointer w-40 bg-white b--dark-red br1 red"
+                className="ba pa2 grow pointer w-40 bg-white b--dark-red br1 red b"
                 onClick={toggleModal}
+                type="button"
               >
                 Cancel
               </button>
