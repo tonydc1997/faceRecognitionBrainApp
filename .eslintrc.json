@@ -21,7 +21,7 @@
       "error",
       "single",
       {
-        "avoid-escape": true,
+        "avoidEscape": true,
         "allowTemplateLiterals": true
       }
     ],
@@ -43,7 +43,6 @@
     "sourceType": "module"
   },
   "plugins": [
-    "prettier",
-    ""
+    "prettier"
   ]
 }
