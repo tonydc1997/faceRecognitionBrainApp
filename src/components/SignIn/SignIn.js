@@ -22,7 +22,9 @@ class SignIn extends React.Component {
     window.sessionStorage.setItem('token', token);
   };
 
+  // Heroku URLS:
   // https://powerful-depths-38914.herokuapp.com/signIn
+  // https://powerful-depths-38914.herokuapp.com/profile/${data.userId}
   onSubmitSignIn = () => {
     fetch('http://localhost:3000/signIn', {
       method: 'post',

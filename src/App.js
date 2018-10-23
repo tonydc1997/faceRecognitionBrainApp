@@ -45,6 +45,9 @@ class App extends Component {
     this.state = initialState;
   }
 
+  // Heroku URLS:
+  // https://powerful-depths-38914.herokuapp.com/signIn
+  // https://powerful-depths-38914.herokuapp.com/profile/${data.id}
   componentDidMount() {
     const token = window.sessionStorage.getItem('token');
     if (token) {
@@ -113,6 +116,7 @@ class App extends Component {
     this.setState({ input: event.target.value });
   };
 
+  // Heroku URLS:
   // https://powerful-depths-38914.herokuapp.com/imageUrl
   // https://powerful-depths-38914.herokuapp.com/image
   onButtonSubmit = () => {

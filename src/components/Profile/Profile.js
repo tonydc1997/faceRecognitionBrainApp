@@ -26,6 +26,7 @@ class Profile extends React.Component {
     }
   };
 
+  // Heroku URL:
   // https://powerful-depths-38914.herokuapp.com/profile/${this.props.user.id}
   onProfileUpdate = data => {
     fetch(`http://localhost:3000/profile/${this.props.user.id}`, {

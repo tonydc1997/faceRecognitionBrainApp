@@ -22,6 +22,7 @@ class Register extends React.Component {
     this.setState({ password: event.target.value });
   };
 
+  // Heroku URL:
   // https://powerful-depths-38914.herokuapp.com/register
   onSubmitSignIn = () => {
     fetch('http://localhost:3000/register', {
