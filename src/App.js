@@ -52,7 +52,7 @@ class App extends Component {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': token
         }
       })
         .then(response => response.json())
