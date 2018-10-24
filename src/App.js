@@ -93,12 +93,12 @@ class App extends Component {
     });
   };
 
-  calculateFaceLocations = data =>
-    data.outputs[0].data.regions.map(face => {
+  calculateFaceLocations = data => {
+    const image = document.getElementById('inputImage');
+    const width = Number(image.width);
+    const height = Number(image.height);
+    return data.outputs[0].data.regions.map(face => {
       const clarifaiFace = face.region_info.bounding_box;
-      const image = document.getElementById('inputImage');
-      const width = Number(image.width);
-      const height = Number(image.height);
       return {
         leftCol: clarifaiFace.left_col * width,
         topRow: clarifaiFace.top_row * height,
@@ -106,6 +106,7 @@ class App extends Component {
         bottomRow: height - clarifaiFace.bottom_row * height,
       };
     });
+  };
 
   displayFaceBoxes = boxes => {
     console.log(boxes);
