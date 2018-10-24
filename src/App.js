@@ -112,8 +112,9 @@ class App extends Component {
   };
 
   displayFaceBoxes = boxes => {
-    console.log(boxes);
-    this.setState({ boxes });
+    if (boxes) {
+      this.setState({ boxes });
+    }
   };
 
   onInputChange = event => {
