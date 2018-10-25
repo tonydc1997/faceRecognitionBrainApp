@@ -11,18 +11,6 @@ import Modal from './components/Modal/Modal';
 import Profile from './components/Profile/Profile';
 import './App.css';
 
-const particlesOptions = {
-  particles: {
-    number: {
-      value: 30,
-      density: {
-        enable: true,
-        value_area: 800,
-      },
-    },
-  },
-};
-
 const initialState = {
   input: '',
   imageUrl: '',
