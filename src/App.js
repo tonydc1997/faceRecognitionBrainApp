@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Particles from 'react-particles-js';
+import ParticlesNoRerender from './components/ParticlesNoRerender/ParticlesNoRerender';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/Navigation/Navigation';
 import SignIn from './components/SignIn/SignIn';
@@ -176,7 +176,7 @@ class App extends Component {
     } = this.state;
     return (
       <div className="App">
-        <Particles className="particles" params={particlesOptions} />
+        <ParticlesNoRerender />
         <Navigation
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
