@@ -7,11 +7,11 @@ class ParticlesNoRerender extends React.Component {
     return false;
   }
 
-  render( {
+  render() {
     return (
-      <Particles />
+      <Particles particlesConfig={particlesConfig />
     )
-  })
+  }
 }
 
 export default ParticlesNoRerender;
