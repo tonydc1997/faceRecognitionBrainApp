@@ -15,6 +15,8 @@ class ProfileIcon extends React.Component {
   };
 
   render() {
+    const { dropdownOpen } = this.state;
+    const { toggleModal, onRouteChange } = this.props;
     return (
       <div className="pa4 tc dib relative">
         <button
@@ -28,7 +30,7 @@ class ProfileIcon extends React.Component {
             alt="avatar"
           />
         </button>
-        {this.state.dropdownOpen && (
+        {dropdownOpen && (
           <ul
             style={{
               marginTop: '-5px',
@@ -40,7 +42,7 @@ class ProfileIcon extends React.Component {
             <li className="db bb b--black-10">
               <button
                 type="button"
-                onClick={this.props.toggleModal}
+                onClick={toggleModal}
                 style={{
                   width: '10rem',
                   borderTopLeftRadius: '.25rem',
@@ -54,7 +56,7 @@ class ProfileIcon extends React.Component {
             <li className="db m0">
               <button
                 type="button"
-                onClick={() => this.props.onRouteChange('signOut')}
+                onClick={() => onRouteChange('signOut')}
                 style={{
                   width: '10rem',
                   borderBottomLeftRadius: '.25rem',
