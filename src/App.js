@@ -174,6 +174,10 @@ class App extends Component {
       isProfileOpen,
       user,
     } = this.state;
+    switch(this.state.route) {
+      default:
+        
+    }
     return (
       <div className="App">
         <ParticlesNoRerender />
