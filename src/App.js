@@ -202,8 +202,24 @@ class App extends Component {
             <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           </div>
         );
-      
-
+      case 'home':
+        return (
+          <div className="App">
+            <ParticlesNoRerender />
+            <Navigation
+              isSignedIn={isSignedIn}
+              onRouteChange={this.onRouteChange}
+            />
+            <Logo />
+            <Rank
+              name={this.state.user.name}
+              entries={this.state.user.entries}
+            />
+            <ImageLinkForm
+              onInputChange={this.onInputChange}
+              onButtonSubmit={this.onButtonSubmit}
+            />
+            <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
             {isProfileOpen && (
               <Modal>
                 <Profile
@@ -214,6 +230,10 @@ class App extends Component {
                 />
               </Modal>
             )}
+          </div>
+        );
+      
+
         
     }
         {route === 'home' ? (
