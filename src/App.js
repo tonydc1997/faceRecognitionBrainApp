@@ -113,7 +113,8 @@ class App extends Component {
   // https://powerful-depths-38914.herokuapp.com/imageUrl
   // https://powerful-depths-38914.herokuapp.com/image
   onButtonSubmit = () => {
-    this.setState({ imageUrl: this.state.input });
+    const { input, user } = this.state;
+    this.setState({ imageUrl: input });
     fetch('http://localhost:3000/imageUrl', {
       method: 'post',
       headers: {
@@ -121,7 +122,7 @@ class App extends Component {
         'Authorization': window.sessionStorage.getItem('token')
       },
       body: JSON.stringify({
-        input: this.state.input,
+        input,
       }),
     })
       .then(response => response.json())
@@ -134,12 +135,12 @@ class App extends Component {
               'Authorization': window.sessionStorage.getItem('token')
             },
             body: JSON.stringify({
-              id: this.state.user.id,
+              id: user.id,
             }),
           })
             .then(resp => resp.json())
             .then(count => {
-              this.setState(Object.assign(this.state.user, { entries: count }));
+              this.setState(Object.assign(user, { entries: count }));
             })
             .catch(console.log);
         }
