@@ -26,12 +26,14 @@ class SignIn extends React.Component {
   // https://powerful-depths-38914.herokuapp.com/signIn
   // https://powerful-depths-38914.herokuapp.com/profile/${data.userId}
   onSubmitSignIn = () => {
+    const { signInEmail, signInPassword } = this.state;
+    const { loadUser, onRouteChange } = this.props;
     fetch('http://localhost:3000/signIn', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword,
+        email: signInEmail,
+        password: signInPassword,
       }),
     })
       .then(response => response.json())
@@ -48,8 +50,8 @@ class SignIn extends React.Component {
             .then(response => response.json())
             .then(user => {
               if (user && user.email) {
-                this.props.loadUser(user);
-                this.props.onRouteChange('home');
+                loadUser(user);
+                onRouteChange('home');
               }
             });
         }
