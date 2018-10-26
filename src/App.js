@@ -174,7 +174,7 @@ class App extends Component {
       isProfileOpen,
       user,
     } = this.state;
-    switch (this.state.route) {
+    switch (route) {
       default:
         return (
           <div className="App">
@@ -197,7 +197,10 @@ class App extends Component {
               isSignedIn={isSignedIn}
               onRouteChange={this.onRouteChange}
             />
-            <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+            <SignIn
+              loadUser={this.loadUser}
+              onRouteChange={this.onRouteChange}
+            />
           </div>
         );
       case 'home':
@@ -210,10 +213,7 @@ class App extends Component {
               toggleModal={this.toggleModal}
             />
             <Logo />
-            <Rank
-              name={this.state.user.name}
-              entries={this.state.user.entries}
-            />
+            <Rank name={user.name} entries={user.entries} />
             <ImageLinkForm
               onInputChange={this.onInputChange}
               onButtonSubmit={this.onButtonSubmit}
