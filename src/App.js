@@ -113,7 +113,8 @@ class App extends Component {
   // https://powerful-depths-38914.herokuapp.com/imageUrl
   // https://powerful-depths-38914.herokuapp.com/image
   onButtonSubmit = () => {
-    this.setState({ imageUrl: this.state.input });
+    const { input, user } = this.state;
+    this.setState({ imageUrl: input });
     fetch('http://localhost:3000/imageUrl', {
       method: 'post',
       headers: {
@@ -121,7 +122,7 @@ class App extends Component {
         'Authorization': window.sessionStorage.getItem('token')
       },
       body: JSON.stringify({
-        input: this.state.input,
+        input,
       }),
     })
       .then(response => response.json())
@@ -134,12 +135,12 @@ class App extends Component {
               'Authorization': window.sessionStorage.getItem('token')
             },
             body: JSON.stringify({
-              id: this.state.user.id,
+              id: user.id,
             }),
           })
             .then(resp => resp.json())
             .then(count => {
-              this.setState(Object.assign(this.state.user, { entries: count }));
+              this.setState(Object.assign(user, { entries: count }));
             })
             .catch(console.log);
         }
@@ -174,47 +175,64 @@ class App extends Component {
       isProfileOpen,
       user,
     } = this.state;
-    return (
-      <div className="App">
-        <ParticlesNoRerender />
-        <Navigation
-          isSignedIn={isSignedIn}
-          onRouteChange={this.onRouteChange}
-          toggleModal={this.toggleModal}
-        />
-        {isProfileOpen && (
-          <Modal>
-            <Profile
-              isProfileOpen={isProfileOpen}
-              toggleModal={this.toggleModal}
+    switch (route) {
+      default:
+        return (
+          <div className="App">
+            <ParticlesNoRerender />
+            <Navigation
+              isSignedIn={isSignedIn}
+              onRouteChange={this.onRouteChange}
+            />
+            <Register
               loadUser={this.loadUser}
-              user={user}
+              onRouteChange={this.onRouteChange}
             />
-          </Modal>
-        )}
-        {route === 'home' ? (
-          <div>
+          </div>
+        );
+      case 'signIn':
+        return (
+          <div className="App">
+            <ParticlesNoRerender />
+            <Navigation
+              isSignedIn={isSignedIn}
+              onRouteChange={this.onRouteChange}
+            />
+            <SignIn
+              loadUser={this.loadUser}
+              onRouteChange={this.onRouteChange}
+            />
+          </div>
+        );
+      case 'home':
+        return (
+          <div className="App">
+            <ParticlesNoRerender />
+            <Navigation
+              isSignedIn={isSignedIn}
+              onRouteChange={this.onRouteChange}
+              toggleModal={this.toggleModal}
+            />
             <Logo />
-            <Rank
-              name={this.state.user.name}
-              entries={this.state.user.entries}
-            />
+            <Rank name={user.name} entries={user.entries} />
             <ImageLinkForm
               onInputChange={this.onInputChange}
               onButtonSubmit={this.onButtonSubmit}
             />
             <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
+            {isProfileOpen && (
+              <Modal>
+                <Profile
+                  isProfileOpen={isProfileOpen}
+                  toggleModal={this.toggleModal}
+                  loadUser={this.loadUser}
+                  user={user}
+                />
+              </Modal>
+            )}
           </div>
-        ) : route === 'signIn' ? (
-          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-        ) : (
-          <Register
-            loadUser={this.loadUser}
-            onRouteChange={this.onRouteChange}
-          />
-        )}
-      </div>
-    );
+        );
+    }
   }
 }
 
