@@ -182,13 +182,24 @@ class App extends Component {
             <Navigation
               isSignedIn={isSignedIn}
               onRouteChange={this.onRouteChange}
-              toggleModal={this.toggleModal}
             />
             <Logo />
             <Register
               loadUser={this.loadUser}
               onRouteChange={this.onRouteChange}
             />
+          </div>
+        );
+      case 'signIn':
+        return (
+          <div className="App">
+            <ParticlesNoRerender />
+            <Navigation
+              isSignedIn={isSignedIn}
+              onRouteChange={this.onRouteChange}
+            />
+            <Logo />
+            <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           </div>
         );
       
