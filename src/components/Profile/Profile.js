@@ -4,10 +4,11 @@ import './Profile.css';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
+    const { user } = this.props;
     this.state = {
-      name: this.props.user.name,
-      age: this.props.user.age,
-      book: this.props.user.book,
+      name: user.name,
+      age: user.age,
+      book: user.book,
     };
   }
 
@@ -27,9 +28,10 @@ class Profile extends React.Component {
   };
 
   // Heroku URL:
-  // https://powerful-depths-38914.herokuapp.com/profile/${this.props.user.id}
+  // https://powerful-depths-38914.herokuapp.com/profile/${user.id}
   onProfileUpdate = data => {
-    fetch(`http://localhost:3000/profile/${this.props.user.id}`, {
+    const { user, loadUser, toggleModal } = this.props;
+    fetch(`http://localhost:3000/profile/${user.id}`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -39,8 +41,8 @@ class Profile extends React.Component {
     })
       .then(resp => {
         if (resp.status === 200 || resp.status === 304) {
-          this.props.toggleModal();
-          this.props.loadUser({ ...this.props.user, ...data });
+          toggleModal();
+          loadUser({ ...user, ...data });
         }
       })
       .catch(console.log);
@@ -58,7 +60,7 @@ class Profile extends React.Component {
               className="h3 w3 dib"
               alt="avatar"
             />
-            <h1>{this.state.name}</h1>
+            <h1>{name}</h1>
             <h4>{`Images Submitted: ${user.entries}`}</h4>
             <p>
               {`Member since: ${new Date(user.joined).toLocaleDateString()}`}
