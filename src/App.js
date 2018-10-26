@@ -232,33 +232,30 @@ class App extends Component {
             )}
           </div>
         );
-      
-
-        
     }
-        {route === 'home' ? (
-          <div>
-            <Logo />
-            <Rank
-              name={this.state.user.name}
-              entries={this.state.user.entries}
-            />
-            <ImageLinkForm
-              onInputChange={this.onInputChange}
-              onButtonSubmit={this.onButtonSubmit}
-            />
-            <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
-          </div>
-        ) : route === 'signIn' ? (
-          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-        ) : (
-          <Register
-            loadUser={this.loadUser}
-            onRouteChange={this.onRouteChange}
-          />
-        )}
-      </div>
-    );
+    //     {route === 'home' ? (
+    //       <div>
+    //         <Logo />
+    //         <Rank
+    //           name={this.state.user.name}
+    //           entries={this.state.user.entries}
+    //         />
+    //         <ImageLinkForm
+    //           onInputChange={this.onInputChange}
+    //           onButtonSubmit={this.onButtonSubmit}
+    //         />
+    //         <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
+    //       </div>
+    //     ) : route === 'signIn' ? (
+    //       <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+    //     ) : (
+    //       <Register
+    //         loadUser={this.loadUser}
+    //         onRouteChange={this.onRouteChange}
+    //       />
+    //     )}
+    //   </div>
+    // );
   }
 }
 
