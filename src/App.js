@@ -176,26 +176,35 @@ class App extends Component {
     } = this.state;
     switch(this.state.route) {
       default:
+        return (
+          <div className="App">
+            <ParticlesNoRerender />
+            <Navigation
+              isSignedIn={isSignedIn}
+              onRouteChange={this.onRouteChange}
+              toggleModal={this.toggleModal}
+            />
+            <Logo />
+            <Register
+              loadUser={this.loadUser}
+              onRouteChange={this.onRouteChange}
+            />
+          </div>
+        );
+      
+
+            {isProfileOpen && (
+              <Modal>
+                <Profile
+                  isProfileOpen={isProfileOpen}
+                  toggleModal={this.toggleModal}
+                  loadUser={this.loadUser}
+                  user={user}
+                />
+              </Modal>
+            )}
         
     }
-    return (
-      <div className="App">
-        <ParticlesNoRerender />
-        <Navigation
-          isSignedIn={isSignedIn}
-          onRouteChange={this.onRouteChange}
-          toggleModal={this.toggleModal}
-        />
-        {isProfileOpen && (
-          <Modal>
-            <Profile
-              isProfileOpen={isProfileOpen}
-              toggleModal={this.toggleModal}
-              loadUser={this.loadUser}
-              user={user}
-            />
-          </Modal>
-        )}
         {route === 'home' ? (
           <div>
             <Logo />
