@@ -174,7 +174,7 @@ class App extends Component {
       isProfileOpen,
       user,
     } = this.state;
-    switch(this.state.route) {
+    switch (this.state.route) {
       default:
         return (
           <div className="App">
@@ -183,7 +183,6 @@ class App extends Component {
               isSignedIn={isSignedIn}
               onRouteChange={this.onRouteChange}
             />
-            <Logo />
             <Register
               loadUser={this.loadUser}
               onRouteChange={this.onRouteChange}
@@ -198,7 +197,6 @@ class App extends Component {
               isSignedIn={isSignedIn}
               onRouteChange={this.onRouteChange}
             />
-            <Logo />
             <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           </div>
         );
@@ -209,6 +207,7 @@ class App extends Component {
             <Navigation
               isSignedIn={isSignedIn}
               onRouteChange={this.onRouteChange}
+              toggleModal={this.toggleModal}
             />
             <Logo />
             <Rank
