@@ -149,8 +149,13 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
+  removeAuthTokenInSession = () => {
+    window.sessionStorage.removeItem('token');
+  };
+
   onRouteChange = route => {
     if (route === 'signOut') {
+      this.removeAuthTokenInSession();
       return this.setState(initialState);
     }
     if (route === 'home') {
