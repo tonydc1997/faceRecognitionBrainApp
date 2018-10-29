@@ -100,7 +100,6 @@ class App extends Component {
         };
       });
     }
-    return;
   };
 
   displayFaceBoxes = boxes => {
