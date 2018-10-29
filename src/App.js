@@ -24,6 +24,8 @@ const initialState = {
     email: '',
     entries: 0,
     joined: new Date(),
+    age: '',
+    book: '',
   },
 };
 
