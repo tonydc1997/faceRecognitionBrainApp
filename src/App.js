@@ -155,6 +155,7 @@ class App extends Component {
 
   onRouteChange = route => {
     if (route === 'signOut') {
+      this.removeAuthTokenInSession();
       return this.setState(initialState);
     }
     if (route === 'home') {
