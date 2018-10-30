@@ -37,10 +37,23 @@ class Register extends React.Component {
       }),
     })
       .then(response => response.json())
-      .then(user => {
-        if (user.id) {
-          loadUser(user);
-          onRouteChange('home');
+      .then(data => {
+        if (data.userId && data.success === 'true') {
+          saveAuthTokenInSession(data.token);
+          fetch(`http://localhost:3000/profile/${data.userId}`, {
+            method: 'get',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': data.token,
+            },
+          })
+            .then(response => response.json())
+            .then(user => {
+              if (user.id) {
+                loadUser(user);
+                onRouteChange('home');
+              }
+            });
         }
       });
   };
