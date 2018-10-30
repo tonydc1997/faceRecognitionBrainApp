@@ -71,6 +71,23 @@ class App extends Component {
     }
   }
 
+  handleResponse = response => {
+    // Convert the readable stream to json
+    return response.json().then(json => {
+      if (!response.ok) {
+        // if the response returns a status code outside of 200-299 throw an error
+        const error = {
+          status: response.status,
+          statusText: response.statusText,
+          json,
+        };
+        return Promise.reject(error);
+      }
+      // if the response is ok return the json object
+      return json;
+    });
+  };
+
   loadUser = data => {
     this.setState({
       user: {
