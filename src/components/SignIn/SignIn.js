@@ -18,16 +18,16 @@ class SignIn extends React.Component {
     this.setState({ signInPassword: event.target.value });
   };
 
-  saveAuthTokenInSession = token => {
-    window.sessionStorage.setItem('token', token);
-  };
+  // saveAuthTokenInSession = token => {
+  //   window.sessionStorage.setItem('token', token);
+  // };
 
   // Heroku URLS:
   // https://powerful-depths-38914.herokuapp.com/signIn
   // https://powerful-depths-38914.herokuapp.com/profile/${data.userId}
   onSubmitSignIn = () => {
     const { signInEmail, signInPassword } = this.state;
-    const { loadUser, onRouteChange } = this.props;
+    const { loadUser, onRouteChange, saveAuthTokenInSession } = this.props;
     fetch('http://localhost:3000/signIn', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -39,7 +39,7 @@ class SignIn extends React.Component {
       .then(response => response.json())
       .then(data => {
         if (data.userId && data.success === 'true') {
-          this.saveAuthTokenInSession(data.token);
+          saveAuthTokenInSession(data.token);
           fetch(`http://localhost:3000/profile/${data.userId}`, {
             method: 'get',
             headers: {
