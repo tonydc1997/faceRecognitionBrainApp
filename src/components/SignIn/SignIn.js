@@ -18,10 +18,6 @@ class SignIn extends React.Component {
     this.setState({ signInPassword: event.target.value });
   };
 
-  saveAuthTokenInSession = token => {
-    window.sessionStorage.setItem('token', token);
-  };
-
   // Heroku URLS:
   // https://powerful-depths-38914.herokuapp.com/signIn
   // https://powerful-depths-38914.herokuapp.com/profile/${data.userId}
