@@ -213,6 +213,7 @@ class App extends Component {
             <SignIn
               loadUser={this.loadUser}
               onRouteChange={this.onRouteChange}
+              saveAuthTokenInSession={this.saveAuthTokenInSession}
             />
           </div>
         );
