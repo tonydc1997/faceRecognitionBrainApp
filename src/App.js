@@ -145,7 +145,7 @@ class App extends Component {
         input,
       }),
     })
-      .then(response => response.json())
+      .then(this.handleResponse)
       .then(response => {
         if (response) {
           fetch('http://localhost:3000/image', {
