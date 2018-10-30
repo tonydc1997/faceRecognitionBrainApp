@@ -48,7 +48,7 @@ class App extends Component {
           'Authorization': token,
         },
       })
-        .then(response => response.json())
+        .then(this.handleResponse)
         .then(data => {
           if (data && data.id) {
             fetch(`http://localhost:3000/profile/${data.id}`, {
@@ -58,7 +58,7 @@ class App extends Component {
                 'Authorization': token,
               },
             })
-              .then(response => response.json())
+              .then(this.handleResponse)
               .then(user => {
                 if (user && user.email) {
                   this.loadUser(user);
