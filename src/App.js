@@ -152,10 +152,6 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
-  saveAuthTokenInSession = token => {
-    window.sessionStorage.setItem('token', token);
-  };
-
   removeAuthTokenInSession = () => {
     window.sessionStorage.removeItem('token');
   };
