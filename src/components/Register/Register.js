@@ -22,15 +22,11 @@ class Register extends React.Component {
     this.setState({ password: event.target.value });
   };
 
-  saveAuthTokenInSession = token => {
-    window.sessionStorage.setItem('token', token);
-  };
-
   // Heroku URL:
   // https://powerful-depths-38914.herokuapp.com/register
   onSubmitSignIn = () => {
     const { email, password, name } = this.state;
-    const { loadUser, onRouteChange } = this.props;
+    const { loadUser, onRouteChange, saveAuthTokenInSession } = this.props;
     fetch('http://localhost:3000/register', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -43,7 +39,7 @@ class Register extends React.Component {
       .then(response => response.json())
       .then(data => {
         if (data.userId && data.success === 'true') {
-          this.saveAuthTokenInSession(data.token);
+          saveAuthTokenInSession(data.token);
           fetch(`http://localhost:3000/profile/${data.userId}`, {
             method: 'get',
             headers: {
