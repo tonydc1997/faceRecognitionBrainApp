@@ -23,7 +23,7 @@ class SignIn extends React.Component {
   // https://powerful-depths-38914.herokuapp.com/profile/${data.userId}
   onSubmitSignIn = () => {
     const { signInEmail, signInPassword } = this.state;
-    const { loadUser, onRouteChange, saveAuthTokenInSession } = this.props;
+    const { loadUser, onRouteChange, saveAuthTokenInSession, handleResponse } = this.props;
     fetch('http://localhost:3000/signIn', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -32,7 +32,7 @@ class SignIn extends React.Component {
         password: signInPassword,
       }),
     })
-      .then(response => response.json())
+      .then(handleResponse)
       .then(data => {
         if (data.userId && data.success === 'true') {
           saveAuthTokenInSession(data.token);
@@ -43,7 +43,7 @@ class SignIn extends React.Component {
               'Authorization': data.token,
             },
           })
-            .then(response => response.json())
+            .then(handleResponse)
             .then(user => {
               if (user && user.email) {
                 loadUser(user);
