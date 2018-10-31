@@ -264,6 +264,7 @@ class App extends Component {
                   toggleModal={this.toggleModal}
                   loadUser={this.loadUser}
                   user={user}
+                  errorLog={this.errorLog}
                 />
               </Modal>
             )}

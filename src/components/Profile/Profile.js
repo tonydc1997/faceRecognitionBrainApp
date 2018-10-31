@@ -30,7 +30,7 @@ class Profile extends React.Component {
   // Heroku URL:
   // https://powerful-depths-38914.herokuapp.com/profile/${user.id}
   onProfileUpdate = data => {
-    const { user, loadUser, toggleModal } = this.props;
+    const { user, loadUser, toggleModal, errorLog } = this.props;
     fetch(`http://localhost:3000/profile/${user.id}`, {
       method: 'post',
       headers: {
@@ -45,7 +45,7 @@ class Profile extends React.Component {
           loadUser({ ...user, ...data });
         }
       })
-      .catch(console.log);
+      .catch(errorLog);
   };
 
   render() {
