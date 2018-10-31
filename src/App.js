@@ -67,7 +67,7 @@ class App extends Component {
               });
           }
         })
-        .catch(console.log);
+        .catch(this.errorLog);
     }
   }
 
@@ -166,11 +166,11 @@ class App extends Component {
             .then(count => {
               this.setState(Object.assign(user, { entries: count }));
             })
-            .catch(console.log);
+            .catch(this.errorLog);
         }
         this.displayFaceBoxes(this.calculateFaceLocations(response));
       })
-      .catch(err => console.log(err));
+      .catch(this.errorLog);
   };
 
   saveAuthTokenInSession = token => {
