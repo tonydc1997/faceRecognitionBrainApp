@@ -88,6 +88,10 @@ class App extends Component {
     });
   };
 
+  errorLog = error => {
+    console.log(error);
+  };
+
   loadUser = data => {
     this.setState({
       user: {
