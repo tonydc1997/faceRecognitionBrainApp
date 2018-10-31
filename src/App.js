@@ -217,6 +217,7 @@ class App extends Component {
               loadUser={this.loadUser}
               onRouteChange={this.onRouteChange}
               saveAuthTokenInSession={this.saveAuthTokenInSession}
+              handleResponse={this.handleResponse}
             />
           </div>
         );
@@ -232,6 +233,7 @@ class App extends Component {
               loadUser={this.loadUser}
               onRouteChange={this.onRouteChange}
               saveAuthTokenInSession={this.saveAuthTokenInSession}
+              handleResponse={this.handleResponse}
             />
           </div>
         );
