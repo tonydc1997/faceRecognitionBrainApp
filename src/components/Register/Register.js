@@ -26,7 +26,7 @@ class Register extends React.Component {
   // https://powerful-depths-38914.herokuapp.com/register
   onSubmitSignIn = () => {
     const { email, password, name } = this.state;
-    const { loadUser, onRouteChange, saveAuthTokenInSession } = this.props;
+    const { loadUser, onRouteChange, saveAuthTokenInSession, handleResponse } = this.props;
     fetch('http://localhost:3000/register', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -36,7 +36,7 @@ class Register extends React.Component {
         name,
       }),
     })
-      .then(response => response.json())
+      .then(handleResponse)
       .then(data => {
         if (data.userId && data.success === 'true') {
           saveAuthTokenInSession(data.token);
@@ -47,7 +47,7 @@ class Register extends React.Component {
               'Authorization': data.token,
             },
           })
-            .then(response => response.json())
+            .then(handleResponse)
             .then(user => {
               if (user.id) {
                 loadUser(user);
