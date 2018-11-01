@@ -36,14 +36,18 @@ class SignIn extends React.Component {
       .then(handleResponse)
       .then(data => {
         if (data.userId && data.success === 'true') {
-          saveAuthTokenInSession(data.token);
-          fetch(`http://localhost:3000/profile/${data.userId}`, {
+          const getRequestOptions = {
             method: 'get',
             headers: {
               'Content-Type': 'application/json',
               'Authorization': data.token,
             },
-          })
+          };
+          saveAuthTokenInSession(data.token);
+          fetch(
+            `http://localhost:3000/profile/${data.userId}`,
+            getRequestOptions,
+          )
             .then(handleResponse)
             .then(user => {
               if (user && user.email) {
