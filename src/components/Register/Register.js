@@ -27,7 +27,7 @@ class Register extends React.Component {
   onSubmitSignIn = () => {
     const { email, password, name } = this.state;
     const { loadUser, onRouteChange, saveAuthTokenInSession, handleResponse } = this.props;
-    fetch('http://localhost:3000/register', {
+    const postRequestOptions = {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -35,18 +35,23 @@ class Register extends React.Component {
         password,
         name,
       }),
-    })
+    };
+    fetch('http://localhost:3000/register', postRequestOptions)
       .then(handleResponse)
       .then(data => {
         if (data.userId && data.success === 'true') {
-          saveAuthTokenInSession(data.token);
-          fetch(`http://localhost:3000/profile/${data.userId}`, {
+          const getRequestOptions = {
             method: 'get',
             headers: {
               'Content-Type': 'application/json',
               'Authorization': data.token,
             },
-          })
+          };
+          saveAuthTokenInSession(data.token);
+          fetch(
+            `http://localhost:3000/profile/${data.userId}`,
+            getRequestOptions,
+          )
             .then(handleResponse)
             .then(user => {
               if (user.id) {
