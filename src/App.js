@@ -139,6 +139,15 @@ class App extends Component {
   onButtonSubmit = () => {
     const { input, user } = this.state;
     const getToken = window.sessionStorage.getItem('token');
+    const postRequestOptions = {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': getToken
+      },
+      body: JSON.stringify({ input })
+    };
+    
     this.setState({ imageUrl: input });
     fetch('http://localhost:3000/imageUrl', {
       method: 'post',
