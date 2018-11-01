@@ -138,12 +138,13 @@ class App extends Component {
   // https://powerful-depths-38914.herokuapp.com/image
   onButtonSubmit = () => {
     const { input, user } = this.state;
+    const getToken = window.sessionStorage.getItem('token');
     this.setState({ imageUrl: input });
     fetch('http://localhost:3000/imageUrl', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': window.sessionStorage.getItem('token')
+        'Authorization': getToken
       },
       body: JSON.stringify({
         input,
@@ -156,7 +157,7 @@ class App extends Component {
             method: 'put',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': window.sessionStorage.getItem('token')
+              'Authorization': getToken
             },
             body: JSON.stringify({
               id: user.id,
