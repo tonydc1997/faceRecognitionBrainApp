@@ -161,7 +161,7 @@ class App extends Component {
       .then(this.handleResponse)
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', )
+          fetch('http://localhost:3000/image', putRequestOptions)
             .then(this.handleResponse)
             .then(count => {
               this.setState(Object.assign(user, { entries: count }));
