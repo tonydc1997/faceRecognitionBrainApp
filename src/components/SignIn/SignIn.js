@@ -24,14 +24,15 @@ class SignIn extends React.Component {
   onSubmitSignIn = () => {
     const { signInEmail, signInPassword } = this.state;
     const { loadUser, onRouteChange, saveAuthTokenInSession, handleResponse } = this.props;
-    fetch('http://localhost:3000/signIn', {
+    const postRequestOptions = {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: signInEmail,
         password: signInPassword,
       }),
-    })
+    };
+    fetch('http://localhost:3000/signIn', postRequestOptions)
       .then(handleResponse)
       .then(data => {
         if (data.userId && data.success === 'true') {
