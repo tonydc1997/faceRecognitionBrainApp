@@ -31,11 +31,12 @@ class Profile extends React.Component {
   // https://powerful-depths-38914.herokuapp.com/profile/${user.id}
   onProfileUpdate = data => {
     const { user, loadUser, toggleModal, errorLog } = this.props;
+    const getToken = window.sessionStorage.getItem('token');
     fetch(`http://localhost:3000/profile/${user.id}`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': window.sessionStorage.getItem('token')
+        'Authorization': getToken
       },
       body: JSON.stringify({ formInput: data }),
     })
