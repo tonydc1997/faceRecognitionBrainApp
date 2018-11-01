@@ -40,24 +40,26 @@ class App extends Component {
   // https://powerful-depths-38914.herokuapp.com/profile/${data.id}
   componentDidMount() {
     const token = window.sessionStorage.getItem('token');
+    const postRequestOptions = {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': token,
+      },
+    };
+    const getRequestOptions = {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': token,
+      },
+    };
     if (token) {
-      fetch('http://localhost:3000/signIn', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': token,
-        },
-      })
+      fetch('http://localhost:3000/signIn', postRequestOptions)
         .then(this.handleResponse)
         .then(data => {
           if (data && data.id) {
-            fetch(`http://localhost:3000/profile/${data.id}`, {
-              method: 'get',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': token,
-              },
-            })
+            fetch(`http://localhost:3000/profile/${data.id}`, getRequestOptions)
               .then(this.handleResponse)
               .then(user => {
                 if (user && user.email) {
@@ -155,7 +157,6 @@ class App extends Component {
       },
       body: JSON.stringify({ id: user.id }),
     };
-
     this.setState({ imageUrl: input });
     fetch('http://localhost:3000/imageUrl', postRequestOptions)
       .then(this.handleResponse)
