@@ -147,22 +147,21 @@ class App extends Component {
       },
       body: JSON.stringify({ input }),
     };
+    const putRequestOptions = {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': getToken,
+      },
+      body: JSON.stringify({ id: user.id }),
+    };
 
     this.setState({ imageUrl: input });
     fetch('http://localhost:3000/imageUrl', postRequestOptions)
       .then(this.handleResponse)
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
-            method: 'put',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': getToken
-            },
-            body: JSON.stringify({
-              id: user.id,
-            }),
-          })
+          fetch('http://localhost:3000/image', )
             .then(this.handleResponse)
             .then(count => {
               this.setState(Object.assign(user, { entries: count }));
