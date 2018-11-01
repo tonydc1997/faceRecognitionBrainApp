@@ -143,22 +143,13 @@ class App extends Component {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': getToken
+        'Authorization': getToken,
       },
-      body: JSON.stringify({ input })
+      body: JSON.stringify({ input }),
     };
-    
+
     this.setState({ imageUrl: input });
-    fetch('http://localhost:3000/imageUrl', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': getToken
-      },
-      body: JSON.stringify({
-        input,
-      }),
-    })
+    fetch('http://localhost:3000/imageUrl', postRequestOptions)
       .then(this.handleResponse)
       .then(response => {
         if (response) {
