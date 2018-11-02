@@ -8,9 +8,7 @@ class ParticlesNoRerender extends Component {
   }
 
   render() {
-    return (
-      <Particles particlesConfig={particlesConfig} className="particles" />
-    );
+    return <Particles params={particlesConfig} className="particles" />;
   }
 }
 
