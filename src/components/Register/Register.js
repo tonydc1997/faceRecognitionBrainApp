@@ -26,7 +26,12 @@ class Register extends React.Component {
   // https://powerful-depths-38914.herokuapp.com/register
   onSubmitSignIn = () => {
     const { email, password, name } = this.state;
-    const { loadUser, onRouteChange, saveAuthTokenInSession, handleResponse } = this.props;
+    const {
+      loadUser,
+      onRouteChange,
+      saveAuthTokenInSession,
+      handleResponse,
+    } = this.props;
     const postRequestOptions = {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
