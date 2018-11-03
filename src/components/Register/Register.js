@@ -22,8 +22,13 @@ class Register extends React.Component {
     this.setState({ password: event.target.value });
   };
 
+  // Local URLS:
+  // http://localhost:3000/register
+  // http://localhost:3000/profile/${data.userId}
+
   // Heroku URL:
   // https://powerful-depths-38914.herokuapp.com/register
+  // https://powerful-depths-38914.herokuapp.com/profile/${data.userId}
   onSubmitSignIn = () => {
     const { email, password, name } = this.state;
     const {
@@ -41,7 +46,7 @@ class Register extends React.Component {
         name,
       }),
     };
-    fetch('http://localhost:3000/register', postRequestOptions)
+    fetch('https://powerful-depths-38914.herokuapp.com/register', postRequestOptions)
       .then(handleResponse)
       .then(data => {
         if (data.userId && data.success === 'true') {
@@ -54,7 +59,7 @@ class Register extends React.Component {
           };
           saveAuthTokenInSession(data.token);
           fetch(
-            `http://localhost:3000/profile/${data.userId}`,
+            `https://powerful-depths-38914.herokuapp.com/profile/${data.userId}`,
             getRequestOptions,
           )
             .then(handleResponse)

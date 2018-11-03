@@ -27,6 +27,9 @@ class Profile extends React.Component {
     }
   };
 
+  // Local URLS:
+  // http://localhost:3000/profile/${user.id}
+
   // Heroku URL:
   // https://powerful-depths-38914.herokuapp.com/profile/${user.id}
   onProfileUpdate = data => {
@@ -40,7 +43,7 @@ class Profile extends React.Component {
       },
       body: JSON.stringify({ formInput: data }),
     };
-    fetch(`http://localhost:3000/profile/${user.id}`, postRequestOptions)
+    fetch(`https://powerful-depths-38914.herokuapp.com/profile/${user.id}`, postRequestOptions)
       .then(resp => {
         if (resp.status === 200 || resp.status === 304) {
           toggleModal();

@@ -35,6 +35,10 @@ class App extends Component {
     this.state = initialState;
   }
 
+  // Local URLS:
+  // http://localhost:3000/signIn
+  // http://localhost:3000/profile/${data.id}
+
   // Heroku URLS:
   // https://powerful-depths-38914.herokuapp.com/signIn
   // https://powerful-depths-38914.herokuapp.com/profile/${data.id}
@@ -55,11 +59,11 @@ class App extends Component {
       },
     };
     if (token) {
-      fetch('http://localhost:3000/signIn', postRequestOptions)
+      fetch('https://powerful-depths-38914.herokuapp.com/signIn', postRequestOptions)
         .then(this.handleResponse)
         .then(data => {
           if (data && data.id) {
-            fetch(`http://localhost:3000/profile/${data.id}`, getRequestOptions)
+            fetch(`https://powerful-depths-38914.herokuapp.com/profile/${data.id}`, getRequestOptions)
               .then(this.handleResponse)
               .then(user => {
                 if (user && user.email) {
@@ -135,6 +139,10 @@ class App extends Component {
     this.setState({ input: event.target.value });
   };
 
+  // Local URLS:
+  // http://localhost:3000/imageUrl
+  // http://localhost:3000/image
+
   // Heroku URLS:
   // https://powerful-depths-38914.herokuapp.com/imageUrl
   // https://powerful-depths-38914.herokuapp.com/image
@@ -158,11 +166,11 @@ class App extends Component {
       body: JSON.stringify({ id: user.id }),
     };
     this.setState({ imageUrl: input });
-    fetch('http://localhost:3000/imageUrl', postRequestOptions)
+    fetch('https://powerful-depths-38914.herokuapp.com/imageUrl', postRequestOptions)
       .then(this.handleResponse)
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', putRequestOptions)
+          fetch('https://powerful-depths-38914.herokuapp.com/image', putRequestOptions)
             .then(this.handleResponse)
             .then(count => {
               this.setState(Object.assign(user, { entries: count }));

@@ -18,6 +18,10 @@ class SignIn extends React.Component {
     this.setState({ signInPassword: event.target.value });
   };
 
+  // Local URLS:
+  // http://localhost:3000/signIn
+  // http://localhost:3000/profile/${data.userId}
+
   // Heroku URLS:
   // https://powerful-depths-38914.herokuapp.com/signIn
   // https://powerful-depths-38914.herokuapp.com/profile/${data.userId}
@@ -37,7 +41,7 @@ class SignIn extends React.Component {
         password: signInPassword,
       }),
     };
-    fetch('http://localhost:3000/signIn', postRequestOptions)
+    fetch('https://powerful-depths-38914.herokuapp.com/signIn', postRequestOptions)
       .then(handleResponse)
       .then(data => {
         if (data.userId && data.success === 'true') {
@@ -50,7 +54,7 @@ class SignIn extends React.Component {
           };
           saveAuthTokenInSession(data.token);
           fetch(
-            `http://localhost:3000/profile/${data.userId}`,
+            `https://powerful-depths-38914.herokuapp.com/profile/${data.userId}`,
             getRequestOptions,
           )
             .then(handleResponse)
