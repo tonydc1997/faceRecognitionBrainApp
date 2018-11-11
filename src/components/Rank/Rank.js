@@ -8,6 +8,11 @@ class Rank extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const { entries } = this.props;
+    this.generateEmoji(entries);
+  }
+
   render() {
     return (
       <div>
