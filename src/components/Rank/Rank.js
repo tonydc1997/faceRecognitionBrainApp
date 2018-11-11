@@ -1,6 +1,13 @@
 import React from 'react';
 
-class Rank extends React.Component { 
+class Rank extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      emoji: '',
+    };
+  }
+
   render() {
     return (
       <div>
