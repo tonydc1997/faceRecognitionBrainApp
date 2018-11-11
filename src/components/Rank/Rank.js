@@ -14,6 +14,7 @@ class Rank extends React.Component {
   }
 
   render() {
+    const { name, entries } = this.props;
     return (
       <div>
         <div className="white f3">
