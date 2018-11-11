@@ -13,6 +13,16 @@ class Rank extends React.Component {
     this.generateEmoji(entries);
   }
 
+  generateEmoji = (entries) => {
+    const { handleResponse, errorLog } = this.props;
+    fetch(
+      `https://j8aypdmm19.execute-api.us-east-1.amazonaws.com/prod/rank?rank=${entries}`,
+    )
+      .then(handleResponse)
+      .then(data => this.setState({ emoji: data.input }))
+      .catch(errorLog);
+  };
+
   render() {
     const { name, entries } = this.props;
     return (
