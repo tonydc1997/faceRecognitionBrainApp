@@ -37,4 +37,5 @@ class Rank extends React.Component {
     );
   }
 }
+
 export default Rank;
