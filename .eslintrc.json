@@ -5,8 +5,7 @@
     "jest": true
   },
   "extends": [
-    "airbnb",
-    "plugin:prettier/recommended"
+    "airbnb"
   ],
   "rules": {
     "class-methods-use-this": "off",
@@ -25,14 +24,7 @@
         "allowTemplateLiterals": true
       }
     ],
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "tabWidth": 2,
-        "trailingComma": "all"
-      }
-    ]
+    "prettier/prettier": ["error"]
   },
   "parser": "babel-eslint",
   "parserOptions":{
