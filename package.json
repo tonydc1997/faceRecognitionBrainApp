@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "clarifai": "^2.8.0",
+    "gh-pages": "^2.0.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-particles-js": "^2.3.0",
