@@ -11,6 +11,8 @@ import Modal from './components/Modal/Modal';
 import Profile from './components/Profile/Profile';
 import './App.css';
 
+// Be sure to change 'localhost' links to reflect AWS or Heroku links
+
 const initialState = {
   input: '',
   imageUrl: '',
