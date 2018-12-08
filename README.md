@@ -1,6 +1,6 @@
 # SmartBrain
 
-A responsive full-stack React app featuring Clarifai's machine-learning API to detect faces within an image. It incorporates an encrypted Postgres database on a RESTful express server, along with a Redis database and JSON Web Tokens (JWT) for session management and caching; allowing users, among other things, to create and customize their profiles to their whim. Finally, AWS Lambda is utilized to cater to the UI/UX with a ranking system for each image submitted.
+A responsive full-stack React app featuring [Clarifai's machine-learning API](https://clarifai.com/models/face-detection-image-recognition-model-a403429f2ddf4b49b307e318f00e528b-detection) to detect faces within an image. It incorporates an encrypted Postgres database on a RESTful express server, along with a Redis database and JSON Web Tokens (JWT) for session management and caching; allowing users, among other things, to create and customize their profiles to their whim. Finally, [AWS Lambda](https://aws.amazon.com/lambda/) is utilized to cater to the UI/UX with a ranking system for each image submitted.
 
 ## UTILIZED
 
