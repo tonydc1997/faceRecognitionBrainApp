@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 // import { userInfo } from 'os';
 
 class SignIn extends React.Component {
   constructor() {
     super();
     this.state = {
-      signInEmail: '',
-      signInPassword: '',
+      signInEmail: "",
+      signInPassword: ""
     };
   }
 
@@ -21,43 +21,50 @@ class SignIn extends React.Component {
   // Heroku URLS:
   // https://powerful-depths-38914.herokuapp.com/signIn
   // https://powerful-depths-38914.herokuapp.com/profile/${data.userId}
+
+  // Local URLS:
+  // http://localhost:3000/signIn
+  // http://localhost:3000/profile/
   onSubmitSignIn = () => {
     const { signInEmail, signInPassword } = this.state;
     const {
       loadUser,
       onRouteChange,
       saveAuthTokenInSession,
-      handleResponse,
+      handleResponse
     } = this.props;
     const postRequestOptions = {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
+      method: "post",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: signInEmail,
-        password: signInPassword,
-      }),
+        password: signInPassword
+      })
     };
-    fetch('http://localhost:3000/signIn', postRequestOptions)
+    fetch(
+      "https://powerful-depths-38914.herokuapp.com/signIn",
+      postRequestOptions
+    )
       .then(handleResponse)
       .then(data => {
-        if (data.userId && data.success === 'true') {
+        if (data.userId && data.success === "true") {
           const getRequestOptions = {
-            method: 'get',
+            method: "get",
             headers: {
-              'Content-Type': 'application/json',
-              'Authorization': data.token,
-            },
+              "Content-Type": "application/json",
+              Authorization: data.token
+            }
           };
           saveAuthTokenInSession(data.token);
           fetch(
-            `http://localhost:3000/profile/${data.userId}`,
-            getRequestOptions,
+            `https://powerful-depths-38914.herokuapp.com/profile/${data.userId}`,
+            getRequestOptions
           )
             .then(handleResponse)
             .then(user => {
               if (user && user.email) {
                 loadUser(user);
-                onRouteChange('home');
+                onRouteChange("home");
               }
             });
         }
@@ -110,7 +117,7 @@ class SignIn extends React.Component {
 
             <div className="lh-copy mt3">
               <p
-                onClick={() => onRouteChange('register')}
+                onClick={() => onRouteChange("register")}
                 className="f6 link dim black db pointer fw6"
               >
                 Register
