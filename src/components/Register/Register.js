@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
 class Register extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: '',
-      password: '',
-      name: '',
+      email: "",
+      password: "",
+      name: ""
     };
   }
 
@@ -24,44 +24,50 @@ class Register extends React.Component {
 
   // Heroku URL:
   // https://powerful-depths-38914.herokuapp.com/register
+
+  // Local URL:
+  // http://localhost:3000/(register)(profile)
   onSubmitSignIn = () => {
     const { email, password, name } = this.state;
     const {
       loadUser,
       onRouteChange,
       saveAuthTokenInSession,
-      handleResponse,
+      handleResponse
     } = this.props;
     const postRequestOptions = {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
+      method: "post",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email,
         password,
-        name,
-      }),
+        name
+      })
     };
-    fetch('http://localhost:3000/register', postRequestOptions)
+    fetch(
+      "https://powerful-depths-38914.herokuapp.com/register",
+      postRequestOptions
+    )
       .then(handleResponse)
       .then(data => {
-        if (data.userId && data.success === 'true') {
+        if (data.userId && data.success === "true") {
           const getRequestOptions = {
-            method: 'get',
+            method: "get",
             headers: {
-              'Content-Type': 'application/json',
-              'Authorization': data.token,
-            },
+              "Content-Type": "application/json",
+              Authorization: data.token
+            }
           };
           saveAuthTokenInSession(data.token);
           fetch(
-            `http://localhost:3000/profile/${data.userId}`,
-            getRequestOptions,
+            `https://powerful-depths-38914.herokuapp.com/profile/${data.userId}`,
+            getRequestOptions
           )
             .then(handleResponse)
             .then(user => {
               if (user.id) {
                 loadUser(user);
-                onRouteChange('home');
+                onRouteChange("home");
               }
             });
         }
