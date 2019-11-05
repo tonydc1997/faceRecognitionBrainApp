@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 // import { userInfo } from 'os';
 
 class SignIn extends React.Component {
   constructor() {
     super();
     this.state = {
-      signInEmail: "",
-      signInPassword: ""
+      signInEmail: '',
+      signInPassword: '',
     };
   }
 
@@ -31,29 +31,29 @@ class SignIn extends React.Component {
       loadUser,
       onRouteChange,
       saveAuthTokenInSession,
-      handleResponse
+      handleResponse,
     } = this.props;
     const postRequestOptions = {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
+      method: 'post',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: JSON.stringify({
         email: signInEmail,
-        password: signInPassword
-      })
+        password: signInPassword,
+      }),
     };
     fetch(
-      "https://powerful-depths-38914.herokuapp.com/signIn",
+      'https://powerful-depths-38914.herokuapp.com/signIn',
       postRequestOptions
     )
       .then(handleResponse)
       .then(data => {
-        if (data.userId && data.success === "true") {
+        if (data.userId && data.success === 'true') {
           const getRequestOptions = {
-            method: "get",
+            method: 'get',
             headers: {
-              "Content-Type": "application/json",
-              Authorization: data.token
-            }
+              'Content-Type': 'application/x-www-form-urlencoded',
+              Authorization: data.token,
+            },
           };
           saveAuthTokenInSession(data.token);
           fetch(
@@ -64,7 +64,7 @@ class SignIn extends React.Component {
             .then(user => {
               if (user && user.email) {
                 loadUser(user);
-                onRouteChange("home");
+                onRouteChange('home');
               }
             });
         }
@@ -117,7 +117,7 @@ class SignIn extends React.Component {
 
             <div className="lh-copy mt3">
               <p
-                onClick={() => onRouteChange("register")}
+                onClick={() => onRouteChange('register')}
                 className="f6 link dim black db pointer fw6"
               >
                 Register
