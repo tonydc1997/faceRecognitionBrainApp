@@ -7,16 +7,9 @@ const Register = () => {
     name: '',
   });
 
-  const onNameChange = event => {
-    this.setState({ name: event.target.value });
-  };
-
-  const onEmailChange = event => {
-    this.setState({ email: event.target.value });
-  };
-
-  const onPasswordChange = event => {
-    this.setState({ password: event.target.value });
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setUserCredentials({ ...userCredentials, [name]: value });
   };
 
   // Heroku URL:
