@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Rank = ({entries, name, errorLog}) => {
-  const [emoji, generateEmoji] = useState({
+  const [emoji, setEmoji] = useState({
     emoji: '',
   })
 
