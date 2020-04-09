@@ -5,6 +5,7 @@ const SignIn = () => {
     signInEmail: '',
     signInPassword: '',
   });
+  const { signInEmail, signInPassword } = signInCredentials;
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -19,7 +20,6 @@ const SignIn = () => {
   // http://localhost:3000/signIn
   // http://localhost:3000/profile/
   const onSubmitSignIn = () => {
-    const { signInEmail, signInPassword } = this.state;
     const {
       loadUser,
       onRouteChange,
