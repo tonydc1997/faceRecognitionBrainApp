@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 
-class Rank extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      emoji: '',
-    };
-  }
+const Rank = () => {
+  const [emoji, generateEmoji] = useState({
+    emoji: '',
+  })
 
   generateEmoji = entries => {
     const { errorLog } = this.props;
