@@ -14,8 +14,8 @@ const Register = ({
   const { email, password, name } = userCredentials;
 
   const handleChange = event => {
-    const { name, value } = event.target;
-    setUserCredentials({ ...userCredentials, [name]: value });
+    const { credential, value } = event.target;
+    setUserCredentials({ ...userCredentials, [credential]: value });
   };
 
   // Heroku URL:
