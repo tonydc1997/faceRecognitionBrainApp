@@ -6,12 +6,9 @@ const SignIn = () => {
     signInPassword: '',
   });
 
-  const onEmailChange = event => {
-    this.setState({ signInEmail: event.target.value });
-  };
-
-  const onPasswordChange = event => {
-    this.setState({ signInPassword: event.target.value });
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setSignInCredentials({ ...signInCredentials, [name]: value });
   };
 
   // Heroku URLS:
