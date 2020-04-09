@@ -5,7 +5,7 @@ const Rank = ({entries, name, errorLog}) => {
     emoji: '',
   })
 
-  generateEmoji = entries => {
+  const generateEmoji = entries => {
     fetch(
       `https://j8aypdmm19.execute-api.us-east-1.amazonaws.com/prod/rank?rank=${entries}`
     )
