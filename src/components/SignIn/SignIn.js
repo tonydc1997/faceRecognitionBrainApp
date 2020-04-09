@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 
-const SignIn = () => {
+const SignIn = ({
+  loadUser,
+  onRouteChange,
+  saveAuthTokenInSession,
+  handleResponse,
+}) => {
   const [signInCredentials, setSignInCredentials] = useState({
     signInEmail: '',
     signInPassword: '',
@@ -20,12 +25,6 @@ const SignIn = () => {
   // http://localhost:3000/signIn
   // http://localhost:3000/profile/
   const onSubmitSignIn = () => {
-    const {
-      loadUser,
-      onRouteChange,
-      saveAuthTokenInSession,
-      handleResponse,
-    } = this.props;
     const postRequestOptions = {
       method: 'post',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -64,7 +63,6 @@ const SignIn = () => {
       });
   };
 
-  const { onRouteChange } = this.props;
   return (
     <article className="br3 ba bw1 b--black-60 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
       <main className="pa4 black-80 bw1 br3 b--mid-gray">
