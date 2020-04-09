@@ -26,7 +26,6 @@ const Rank = ({entries, name, errorLog}) => {
     this.generateEmoji(entries);
   }
 
-  render() {
     return (
       <div>
         <div className="white f3">
@@ -37,6 +36,6 @@ const Rank = ({entries, name, errorLog}) => {
       </div>
     );
   }
-}
+
 
 export default Rank;
