@@ -6,7 +6,7 @@ const Register = () => {
     password: '',
     name: '',
   });
-
+  const { email, password, name } = userCredentials;
   const handleChange = event => {
     const { name, value } = event.target;
     setUserCredentials({ ...userCredentials, [name]: value });
@@ -18,7 +18,6 @@ const Register = () => {
   // Local URL:
   // http://localhost:3000/(register)(profile)
   const onSubmitSignIn = () => {
-    const { email, password, name } = this.state;
     const {
       loadUser,
       onRouteChange,
