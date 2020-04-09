@@ -11,7 +11,7 @@ const Rank = ({entries, name, errorLog}) => {
       `https://j8aypdmm19.execute-api.us-east-1.amazonaws.com/prod/rank?rank=${entries}`
     )
       .then(response => response.json())
-      .then(data => this.setState({ emoji: data.input }))
+      .then(data => setEmoji({ emoji: data.input }))
       .catch(errorLog);
   };
 
