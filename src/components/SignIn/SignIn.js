@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 
 const SignIn = () => {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     signInEmail: '',
-  //     signInPassword: '',
-  //   };
-  // }
+  const [signInCredentials, setSignInCredentials] = useState({
+    signInEmail: '',
+    signInPassword: '',
+  });
 
   const onEmailChange = event => {
     this.setState({ signInEmail: event.target.value });
