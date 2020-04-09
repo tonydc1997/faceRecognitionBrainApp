@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 const Rank = ({entries, name, errorLog}) => {
-  const [emoji, setEmoji] = useState({
+  const [emojiRank, setEmoji] = useState({
     emoji: '',
   })
+  const { emoji } = emojiRank;
 
   const generateEmoji = entries => {
     fetch(
@@ -26,8 +27,6 @@ const Rank = ({entries, name, errorLog}) => {
   }
 
   render() {
-    const { name, entries } = this.props;
-    const { emoji } = this.state;
     return (
       <div>
         <div className="white f3">
