@@ -6,9 +6,9 @@ const Rank = ({ entries, name, errorLog }) => {
   });
   const { emoji } = emojiRank;
 
-  const generateEmoji = entries => {
+  const generateEmoji = entry => {
     fetch(
-      `https://j8aypdmm19.execute-api.us-east-1.amazonaws.com/prod/rank?rank=${entries}`
+      `https://j8aypdmm19.execute-api.us-east-1.amazonaws.com/prod/rank?rank=${entry}`
     )
       .then(response => response.json())
       .then(data => setEmoji({ emoji: data.input }))
