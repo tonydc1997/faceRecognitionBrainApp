@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 
-const Register = () => {
+const Register = ({
+  loadUser,
+  onRouteChange,
+  saveAuthTokenInSession,
+  handleResponse,
+}) => {
   const [userCredentials, setUserCredentials] = useState({
     email: '',
     password: '',
     name: '',
   });
   const { email, password, name } = userCredentials;
+
   const handleChange = event => {
     const { name, value } = event.target;
     setUserCredentials({ ...userCredentials, [name]: value });
@@ -18,12 +24,6 @@ const Register = () => {
   // Local URL:
   // http://localhost:3000/(register)(profile)
   const onSubmitSignIn = () => {
-    const {
-      loadUser,
-      onRouteChange,
-      saveAuthTokenInSession,
-      handleResponse,
-    } = this.props;
     const postRequestOptions = {
       method: 'post',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
