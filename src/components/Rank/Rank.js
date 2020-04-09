@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 
-const Rank = () => {
+const Rank = ({entries, name, errorLog}) => {
   const [emoji, generateEmoji] = useState({
     emoji: '',
   })
 
   generateEmoji = entries => {
-    const { errorLog } = this.props;
     fetch(
       `https://j8aypdmm19.execute-api.us-east-1.amazonaws.com/prod/rank?rank=${entries}`
     )
@@ -16,12 +15,10 @@ const Rank = () => {
   };
 
   componentDidMount() {
-    const { entries } = this.props;
     this.generateEmoji(entries);
   }
 
   componentDidUpdate(prevProps) {
-    const { entries, name } = this.props;
     if (prevProps.entries === entries && prevProps.name === name) {
       return null;
     }
