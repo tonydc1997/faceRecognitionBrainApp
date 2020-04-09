@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 
 const Register = () => {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     email: '',
-  //     password: '',
-  //     name: '',
-  //   };
-  // }
+  const [userCredentials, setUserCredentials] = useState({
+    email: '',
+    password: '',
+    name: '',
+  });
 
   const onNameChange = event => {
     this.setState({ name: event.target.value });
